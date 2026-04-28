@@ -1538,7 +1538,7 @@ const serviceBundles = [
     .process-step small {
       display: block;
       margin-bottom: 12px;
-      color: #7a808c;
+      color: #f47820;
       font-size: 11px;
       font-weight: 900;
       letter-spacing: .12em;
@@ -2041,9 +2041,9 @@ const serviceBundles = [
             <p>We do not force every project into the same package. Instead, we recommend the right combination based on what your space needs to communicate and how your audience will experience it.</p>
           </div>
           <div class="process-grid">
-            {serviceSteps.map((step) => (
+            {serviceSteps.map((step, index) => (
               <article class="process-step">
-                <small>Step</small>
+                <small>{`Step ${String(index + 1).padStart(2, "0")}`}</small>
                 <strong>{step.label}</strong>
                 <p>{step.body}</p>
               </article>
