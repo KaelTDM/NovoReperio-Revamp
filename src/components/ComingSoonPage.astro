@@ -1,0 +1,271 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  label: string;
+}
+
+const { title, description, label } = Astro.props;
+---
+
+<SiteLayout title={title} description={description}>
+  <style is:global>
+    :root {
+      --cs-blue: #159fe6;
+      --cs-blue-dark: #0f83bf;
+      --cs-pink: #e4126a;
+      --cs-ink: #101114;
+      --cs-muted: #6b7280;
+      --cs-line: rgba(16, 17, 20, 0.1);
+      --cs-shadow: 0 18px 50px rgba(16, 17, 20, 0.12);
+    }
+
+    .coming-shell {
+      width: 100%;
+      max-width: 1680px;
+      margin: 0 auto;
+      padding-inline: 100px;
+    }
+
+    .coming-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(12, 12, 15, 0.82);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+    }
+
+    .coming-nav {
+      display: flex;
+      min-height: 72px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      color: #fff;
+    }
+
+    .coming-brand {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .coming-brand img {
+      width: 192px;
+      height: 40px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .coming-links,
+    .coming-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .coming-links a {
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .coming-links a.is-active {
+      color: #fff;
+    }
+
+    .coming-btn {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+    }
+
+    .coming-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(21, 159, 230, 0.18);
+    }
+
+    .coming-btn-secondary {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.26);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .coming-btn-primary {
+      color: #fff;
+      background: var(--cs-blue);
+      border-color: var(--cs-blue);
+    }
+
+    .coming-hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      align-items: center;
+      padding: 72px 0 96px;
+      background:
+        radial-gradient(circle at 78% 20%, rgba(21, 159, 230, 0.16), transparent 24%),
+        linear-gradient(180deg, #ffffff, #f8fbff 62%, #f5f7fb);
+    }
+
+    .coming-card {
+      max-width: 980px;
+      padding: 44px;
+      border: 1px solid var(--cs-line);
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at 88% 10%, rgba(21, 159, 230, 0.12), transparent 24%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 253, 0.98));
+      box-shadow: var(--cs-shadow);
+    }
+
+    .coming-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 14px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--cs-pink);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .coming-card h1 {
+      margin-top: 22px;
+      font-size: clamp(48px, 7vw, 92px);
+      line-height: 0.92;
+      letter-spacing: -0.08em;
+      color: var(--cs-ink);
+    }
+
+    .coming-card p {
+      max-width: 640px;
+      margin-top: 18px;
+      color: var(--cs-muted);
+      font-size: 18px;
+      line-height: 1.78;
+    }
+
+    .coming-card .coming-message {
+      margin-top: 28px;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      color: var(--cs-ink);
+    }
+
+    .coming-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .coming-meta span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--cs-line);
+      background: rgba(255, 255, 255, 0.92);
+      color: #465061;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .coming-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 820px) {
+      .coming-shell {
+        padding-inline: 10px;
+      }
+
+      .coming-nav {
+        min-height: 66px;
+      }
+
+      .coming-links {
+        display: none;
+      }
+
+      .coming-actions .coming-btn-secondary {
+        display: none;
+      }
+
+      .coming-brand img {
+        width: 164px;
+        height: 34px;
+      }
+
+      .coming-hero {
+        min-height: calc(100vh - 66px);
+        padding: 40px 0 72px;
+      }
+
+      .coming-card {
+        padding: 28px 22px;
+        border-radius: 24px;
+      }
+    }
+  </style>
+
+  <header class="coming-header">
+    <div class="coming-shell coming-nav">
+      <a href="/" class="coming-brand" aria-label="Novo Reperio home">
+        <img src="/images/Novo-logo-for-website.png.webp" alt="Novo Reperio" loading="eager" />
+      </a>
+
+      <nav class="coming-links" aria-label="Primary navigation">
+        <a href="/services">Services</a>
+        <a class={label === "Works" ? "is-active" : ""} href="/works">Works</a>
+        <a class={label === "About" ? "is-active" : ""} href="/about">About</a>
+        <a class={label === "Contact" ? "is-active" : ""} href="/contact">Contact</a>
+        <a class={label === "Insights" ? "is-active" : ""} href="/insights">Insights</a>
+      </nav>
+
+      <div class="coming-actions">
+        <a class="coming-btn coming-btn-secondary" href="/works">See Our Work</a>
+        <a class="coming-btn coming-btn-primary" href="/contact">Request Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="coming-hero">
+    <div class="coming-shell">
+      <section class="coming-card">
+        <span class="coming-label">{label}</span>
+        <h1>{label}</h1>
+        <p>{description}</p>
+        <div class="coming-message">Coming soon!</div>
+        <div class="coming-meta">
+          <span>Page in progress</span>
+          <span>Design coming next</span>
+          <span>Content coming next</span>
+        </div>
+        <div class="coming-cta">
+          <a class="coming-btn coming-btn-primary" href="/contact">Request Quote</a>
+          <a class="coming-btn coming-btn-secondary" href="/services">Back to Services</a>
+        </div>
+      </section>
+    </div>
+  </main>
+</SiteLayout>

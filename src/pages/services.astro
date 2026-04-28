@@ -1,0 +1,2322 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const primaryServices = [
+  {
+    id: "matterport",
+    label: "Matterport 3D Virtual Tours",
+    cardBenefit: "Explore spaces in realistic 3D before visiting.",
+    detailTitle: "3D Virtual Tours with Matterport",
+    detailDescription:
+      "Let users walk through your space online with a realistic, immersive experience.",
+    bullets: [
+      "3D walkthrough navigation",
+      "Remote viewing for clients",
+      "Improves decision-making",
+    ],
+    primaryCtaLabel: "Request Quote",
+    primaryCtaUrl: "/contact",
+    secondaryCtaLabel: "View Demo",
+    secondaryCtaUrl:
+      "https://novoreperio.com/portfolio-item/hotel/3d-matterport-virtual-tour/hyatt-kuantan-ballroom/",
+    visual: "matterport",
+    mediaType: "iframe",
+    iframeSrc: "https://my.matterport.com/show/?m=V4ViihFfjzk",
+    iframeTitle: "Matterport virtual tour demo",
+    cardTone: "dark",
+    statLabel: "Best for",
+    statValue: "Venue tours, property walkthroughs, and client review before site visits.",
+    iconLabel: "3D",
+  },
+  {
+    id: "tours-360",
+    label: "360° Virtual Tours",
+    cardBenefit: "Fast, accessible virtual experiences for any device.",
+    detailTitle: "360° Virtual Tours for Fast Sharing",
+    detailDescription:
+      "Lightweight tours that load quickly and work across all devices.",
+    bullets: [
+      "Easy to share via link",
+      "Works on mobile & desktop",
+      "Ideal for marketing",
+    ],
+    primaryCtaLabel: "Request Quote",
+    primaryCtaUrl: "/contact",
+    secondaryCtaLabel: "View Example",
+    secondaryCtaUrl: "/works",
+    visual: "tours",
+    mediaType: "visual",
+    cardTone: "light",
+    statLabel: "Best for",
+    statValue: "Campaign pages, sales follow-up, QR sharing, and quick marketing previews.",
+    iconLabel: "360",
+  },
+  {
+    id: "drone-aerial",
+    label: "Drone & Aerial",
+    cardBenefit: "Show full property context from above.",
+    detailTitle: "Drone & Aerial Visuals",
+    detailDescription:
+      "Show the full context of your property and surroundings.",
+    bullets: [
+      "Highlight location & scale",
+      "Great for real estate & venues",
+      "Adds visual impact",
+    ],
+    primaryCtaLabel: "Request Quote",
+    primaryCtaUrl: "/contact",
+    secondaryCtaLabel: "View Example",
+    secondaryCtaUrl: "/works",
+    visual: "matterport",
+    visual: "drone",
+    mediaType: "visual",
+    cardTone: "dark",
+    statLabel: "Best for",
+    statValue: "Real estate, venues, destination spaces, and location-first presentations.",
+    iconLabel: "AIR",
+  },
+];
+
+const mainServices = [
+  {
+    id: "matterport",
+    label: "Matterport 3D Virtual Tours",
+    cardBenefit: "Explore spaces in realistic 3D before visiting.",
+    detailTitle: "3D Virtual Tours with Matterport",
+    detailDescription:
+      "Let users walk through your space online with a realistic, immersive experience.",
+    bullets: [
+      "3D walkthrough navigation",
+      "Remote viewing for clients",
+      "Improves decision-making",
+    ],
+    primaryCtaLabel: "Request Quote",
+    primaryCtaUrl: "/contact",
+    secondaryCtaLabel: "View Demo",
+    secondaryCtaUrl:
+      "https://novoreperio.com/portfolio-item/hotel/3d-matterport-virtual-tour/hyatt-kuantan-ballroom/",
+    visual: "matterport",
+    cardTone: "dark",
+    iconLabel: "3D",
+    statLabel: "Best for",
+    statValue: "Venue tours, property walkthroughs, and client review before site visits.",
+    iframeSrc: "https://my.matterport.com/show/?m=V4ViihFfjzk",
+    iframeTitle: "Matterport virtual tour demo",
+  },
+  {
+    id: "tours-360",
+    label: "360 Virtual Tours",
+    cardBenefit: "Fast, accessible virtual experiences for any device.",
+    detailTitle: "360 Virtual Tours for Fast Sharing",
+    detailDescription:
+      "Lightweight tours that load quickly and work across all devices.",
+    bullets: [
+      "Easy to share via link",
+      "Works on mobile & desktop",
+      "Ideal for marketing",
+    ],
+    primaryCtaLabel: "Request Quote",
+    primaryCtaUrl: "/contact",
+    secondaryCtaLabel: "View Example",
+    secondaryCtaUrl: "/works",
+    visual: "tours",
+    cardTone: "light",
+    iconLabel: "360",
+    statLabel: "Best for",
+    statValue: "Campaign pages, sales follow-up, QR sharing, and quick marketing previews.",
+  },
+  {
+    id: "drone-aerial",
+    label: "Drone & Aerial",
+    cardBenefit: "Show full property context from above.",
+    detailTitle: "Drone & Aerial Visuals",
+    detailDescription:
+      "Show the full context of your property and surroundings.",
+    bullets: [
+      "Highlight location & scale",
+      "Great for real estate & venues",
+      "Adds visual impact",
+    ],
+    primaryCtaLabel: "Request Quote",
+    primaryCtaUrl: "/contact",
+    secondaryCtaLabel: "View Example",
+    secondaryCtaUrl: "/works",
+    visual: "drone",
+    cardTone: "dark",
+    iconLabel: "AIR",
+    statLabel: "Best for",
+    statValue: "Real estate, venues, destination spaces, and location-first presentations.",
+  },
+];
+
+const defaultService = mainServices[0];
+
+const supportServices = [
+  {
+    title: "Web Development",
+    body: "For project microsites, campaign landing pages, and polished web experiences that package tours, visuals, and story in one place.",
+    featured: true,
+    label: "Launch-ready layer",
+  },
+  {
+    title: "3D Walkthroughs",
+    body: "For projects that need pre-built spatial storytelling before physical completion or launch.",
+    label: "Additional service",
+  },
+  {
+    title: "3D Visualisation",
+    body: "For CGI, virtual staging, and presentation assets that need more polish or future-state clarity.",
+    label: "Additional service",
+  },
+  {
+    title: "3D 360 Rendering",
+    body: "For panoramic presentation assets that bridge concept, launch, and guided online review.",
+    label: "Additional service",
+  },
+  {
+    title: "Commercial Photography",
+    body: "For still-image support when the project needs sharper campaign, brochure, or web collateral.",
+    label: "Additional service",
+  },
+];
+
+const serviceSteps = [
+  {
+    label: "Assess the space",
+    body: "Start with what must be understood clearly: layout, finish, arrival, circulation, or broader context.",
+  },
+  {
+    label: "Match the output",
+    body: "Choose the right mix of Matterport, 360, aerial, CGI, or launch packaging based on how the asset will actually be used.",
+  },
+  {
+    label: "Launch the handoff",
+    body: "Deliver the final format in the place the audience will use it: website, QR, deck, campaign, or stakeholder review.",
+  },
+];
+
+const serviceBundles = [
+  {
+    title: "Venue Sales",
+    combo: "Matterport + aerial + launch page",
+    body: "Best when buyers need scale, arrival flow, and setup confidence before the site visit.",
+  },
+  {
+    title: "Property Launch",
+    combo: "360 + drone + CGI support",
+    body: "Best when the project needs a cleaner public-facing presentation layer for campaigns and handoff.",
+  },
+  {
+    title: "Facilities Review",
+    combo: "Matterport + stills + deck-ready delivery",
+    body: "Best when internal teams need accurate remote review and clearer operational discussion.",
+  },
+];
+---
+
+<SiteLayout
+  title="Novo Reperio Services | Digital Twins, 360 Tours, Aerial, Project Websites"
+  description="Explore Novo Reperio services across Matterport digital twins, 360 tours, drone and aerial support, launch-ready project websites, and supporting visual production."
+>
+  <style is:global>
+    :root {
+      --nr-blue: #159fe6;
+      --nr-blue-dark: #0f83bf;
+      --nr-pink: #e4126a;
+      --nr-orange: #f37121;
+      --ink: #101114;
+      --muted: #6b7280;
+      --line: rgba(16, 17, 20, 0.1);
+      --white: #ffffff;
+      --surface: #fbfcfe;
+      --soft: #f7f8fb;
+      --dark: #0d1118;
+      --shadow: 0 18px 50px rgba(16, 17, 20, 0.12);
+      --shadow-soft: 0 12px 30px rgba(16, 17, 20, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, textarea { font: inherit; }
+
+    .container,
+    .wide-shell {
+      width: 100%;
+      max-width: 1680px;
+      margin: 0 auto;
+      padding-inline: 100px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 800;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease, color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(21,159,230,.18); }
+    .btn-primary { color: #fff; background: var(--nr-blue); border-color: var(--nr-blue); }
+    .btn-primary:hover { background: var(--nr-blue-dark); }
+    .btn-secondary { color: #fff; border-color: rgba(255,255,255,.55); background: rgba(255,255,255,.06); backdrop-filter: blur(14px); }
+    .btn-light { color: var(--nr-blue); background: #fff; border-color: rgba(21,159,230,.2); }
+    .btn-light:hover { color: #fff; background: var(--nr-blue); border-color: var(--nr-blue); }
+
+    .eyebrow {
+      display: inline-flex;
+      width: max-content;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--nr-pink);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(12,12,15,.82);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 72px; color: #fff; }
+    .brand { display: inline-flex; align-items: center; }
+    .brand-mark {
+      width: 192px;
+      height: 40px;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+    }
+    .nav-links, .nav-actions { display: flex; align-items: center; gap: 24px; }
+    .nav-links a {
+      position: relative;
+      color: rgba(255,255,255,.86);
+      font-size: 14px;
+      font-weight: 700;
+      transition: color .22s ease;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(21,159,230,.25), #159fe6 40%, rgba(21,159,230,.25));
+      transform: scaleX(.28);
+      transform-origin: center;
+      opacity: 0;
+      transition: transform .26s ease, opacity .26s ease;
+      box-shadow: 0 0 14px rgba(21,159,230,.28);
+    }
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .nav-links a.is-active {
+      color: #fff;
+    }
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after,
+    .nav-links a.is-active::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+
+    .services-hero {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(circle at 76% 18%, rgba(21,159,230,.24), transparent 28%),
+        linear-gradient(112deg, rgba(6,6,8,.99) 0%, rgba(12,12,15,.95) 40%, rgba(12,12,15,.88) 100%);
+      padding: 92px 0 110px;
+    }
+    .services-hero::before {
+      content: "";
+      position: absolute;
+      inset: auto -10% -35% -10%;
+      height: 64%;
+      background:
+        radial-gradient(circle, rgba(255,255,255,.13) 0 1px, transparent 1.8px) 0 0 / 22px 22px,
+        radial-gradient(circle, rgba(21,159,230,.14) 0 1px, transparent 2px) 11px 11px / 22px 22px;
+      opacity: .24;
+      transform: perspective(1100px) rotateX(74deg) scale(1.68);
+      pointer-events: none;
+    }
+    .hero-layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      gap: 42px;
+      align-items: center;
+    }
+    .hero-copy h1 {
+      max-width: 700px;
+      margin: 18px 0 22px;
+      font-size: clamp(48px, 6vw, 86px);
+      line-height: .94;
+      letter-spacing: -.07em;
+    }
+    .hero-copy p {
+      max-width: 580px;
+      color: rgba(255,255,255,.86);
+      font-size: 19px;
+      line-height: 1.65;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+      color: rgba(255,255,255,.84);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .hero-proof span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .hero-proof span::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--nr-orange);
+      box-shadow: 0 0 0 5px rgba(243,113,33,.13);
+    }
+
+    .hero-visual-stage {
+      position: relative;
+      min-height: 660px;
+      isolation: isolate;
+    }
+    .hero-main-frame {
+      position: absolute;
+      inset: 22px 18px 22px 18px;
+      border-radius: 40px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.1);
+      background:
+        linear-gradient(180deg, rgba(7,10,15,.16), rgba(7,10,15,.72)),
+        url("https://novoreperio.com/wp-content/uploads/2023/10/01.18.2023_13.45.49.webp") center/cover;
+      box-shadow: 0 30px 72px rgba(0,0,0,.28);
+    }
+    .hero-main-frame::before {
+      content: "";
+      position: absolute;
+      inset: auto -16% -34% auto;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(21,159,230,.34), transparent 62%);
+      filter: blur(16px);
+    }
+    .hero-main-frame::after {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.1);
+      pointer-events: none;
+    }
+    .hero-service-tile {
+      position: absolute;
+      width: 228px;
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.96);
+      color: var(--ink);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 22px 44px rgba(0,0,0,.22);
+      backdrop-filter: blur(18px);
+    }
+    .hero-service-tile small {
+      display: block;
+      margin-bottom: 10px;
+      color: #7a808c;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .hero-service-tile strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 24px;
+      line-height: 1.04;
+      letter-spacing: -.05em;
+    }
+    .hero-service-tile p {
+      max-width: 150px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .hero-service-tile .mini-drone {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+    }
+    .hero-service-tile .mini-drone {
+      width: 72px;
+      filter: drop-shadow(0 10px 20px rgba(16,17,20,.12));
+    }
+    .hero-service-tile.matterport {
+      top: 42px;
+      right: 18px;
+      width: 236px;
+      background: rgba(9,12,18,.9);
+      color: #fff;
+      border-color: rgba(255,255,255,.08);
+    }
+    .hero-service-tile.matterport small { color: rgba(255,255,255,.62); }
+    .hero-service-tile.matterport p { color: rgba(255,255,255,.74); }
+    .hero-service-tile.drone {
+      right: 18px;
+      bottom: 42px;
+    }
+    .hero-frame-copy {
+      position: absolute;
+      top: 42px;
+      left: 42px;
+      max-width: 290px;
+      padding: 20px 22px;
+      border-radius: 20px;
+      color: #fff;
+      background: rgba(10,12,18,.84);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,.08);
+      z-index: 2;
+    }
+    .hero-frame-copy strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+      letter-spacing: -.03em;
+    }
+    .hero-frame-copy span {
+      display: block;
+      color: rgba(255,255,255,.74);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .hero-stage-actions {
+      position: absolute;
+      left: 42px;
+      bottom: 42px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .hero-stage-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 54px;
+      padding: 0 20px;
+      border-radius: 18px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: rgba(8,12,18,.82);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 18px 34px rgba(0,0,0,.28);
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background .28s ease;
+    }
+    .hero-stage-cta::after {
+      content: "->";
+      color: var(--nr-blue);
+      font-size: 16px;
+      font-weight: 900;
+    }
+    .hero-stage-cta:hover {
+      transform: translateY(-2px);
+      border-color: rgba(21,159,230,.36);
+      background: rgba(9,14,22,.92);
+      box-shadow: 0 22px 42px rgba(8,16,28,.34);
+    }
+    .hero-visual-rail {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 420px;
+      padding: 12px;
+      border-radius: 20px;
+      background: rgba(8,12,18,.68);
+      border: 1px solid rgba(255,255,255,.1);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 34px rgba(0,0,0,.24);
+    }
+    .hero-visual-rail span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      color: rgba(255,255,255,.84);
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.06);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .hero-visual-rail span.is-accent {
+      color: #fff;
+      border-color: rgba(21,159,230,.36);
+      background: rgba(21,159,230,.16);
+    }
+
+    .section { padding: 92px 0; }
+    .section-title { margin-bottom: 34px; }
+    .section-title h2 {
+      max-width: 940px;
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: .98;
+      letter-spacing: -.06em;
+    }
+    .section-title p {
+      max-width: 720px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .services-overview {
+      padding-top: 40px;
+    }
+    .service-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .service-card-button {
+      position: relative;
+      display: flex;
+      width: 100%;
+      min-height: 198px;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px;
+      border: 1px solid rgba(16,17,20,.08);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(247,250,253,.98));
+      box-shadow: var(--shadow-soft);
+      text-align: left;
+      cursor: pointer;
+      transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease, border-color .3s ease, background .3s ease;
+    }
+    .service-card-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(16,17,20,.12);
+    }
+    .service-card-button.is-paused-hover {
+      border-color: rgba(21,159,230,.54);
+      box-shadow:
+        0 0 0 1px rgba(21,159,230,.18),
+        0 18px 38px rgba(21,159,230,.16),
+        0 0 32px rgba(21,159,230,.18);
+      transform: translateY(-6px) scale(1.018);
+    }
+    .service-card-button.is-active {
+      border-color: rgba(21,159,230,.34);
+      background: linear-gradient(180deg, rgba(238,247,255,.98), rgba(248,251,255,.98));
+      box-shadow: 0 24px 48px rgba(21,159,230,.12);
+      transform: translateY(-3px);
+    }
+    .service-card-button[data-tone="dark"] {
+      color: #fff;
+      border-color: rgba(255,255,255,.1);
+      background:
+        radial-gradient(circle at 92% 10%, rgba(21,159,230,.18), transparent 24%),
+        linear-gradient(180deg, rgba(11,13,19,.98), rgba(15,19,27,.98));
+    }
+    .service-card-button[data-tone="dark"].is-active {
+      border-color: rgba(21,159,230,.44);
+      box-shadow: 0 26px 54px rgba(7,12,20,.26);
+    }
+    .service-card-button[data-tone="dark"].is-paused-hover {
+      border-color: rgba(21,159,230,.64);
+      box-shadow:
+        0 0 0 1px rgba(21,159,230,.22),
+        0 22px 44px rgba(7,12,20,.28),
+        0 0 38px rgba(21,159,230,.2);
+      background:
+        radial-gradient(circle at 92% 10%, rgba(21,159,230,.26), transparent 24%),
+        linear-gradient(180deg, rgba(11,13,19,.98), rgba(15,19,27,.98));
+    }
+    .service-card-button.is-active.is-paused-hover {
+      border-color: rgba(21,159,230,.62);
+      box-shadow:
+        0 0 0 1px rgba(21,159,230,.2),
+        0 28px 56px rgba(21,159,230,.18),
+        0 0 36px rgba(21,159,230,.18);
+      transform: translateY(-8px) scale(1.02);
+    }
+    .service-card-button[data-tone="dark"].is-active.is-paused-hover {
+      border-color: rgba(21,159,230,.72);
+      box-shadow:
+        0 0 0 1px rgba(21,159,230,.24),
+        0 28px 58px rgba(7,12,20,.34),
+        0 0 42px rgba(21,159,230,.24);
+      background:
+        radial-gradient(circle at 92% 10%, rgba(21,159,230,.28), transparent 24%),
+        linear-gradient(180deg, rgba(11,13,19,.98), rgba(15,19,27,.98));
+      transform: translateY(-8px) scale(1.02);
+    }
+    .service-card-button.is-active::after {
+      content: "";
+      position: absolute;
+      inset: auto 18px 12px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(21,159,230,0), rgba(21,159,230,.9), rgba(21,159,230,0));
+      opacity: .95;
+    }
+    .service-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .service-card-copy strong {
+      display: block;
+      max-width: 220px;
+      font-size: 24px;
+      line-height: 1.06;
+      letter-spacing: -.05em;
+    }
+    .service-card-copy p {
+      margin-top: 12px;
+      max-width: 240px;
+      color: #596272;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .service-card-button[data-tone="dark"] .service-card-copy p {
+      color: rgba(255,255,255,.72);
+    }
+    .service-card-icon {
+      position: relative;
+      flex: 0 0 auto;
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: var(--nr-blue-dark);
+      background: linear-gradient(180deg, rgba(236,247,255,.96), rgba(223,241,255,.94));
+      border: 1px solid rgba(21,159,230,.14);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .service-card-button[data-tone="dark"] .service-card-icon {
+      color: #fff;
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.12);
+    }
+    .service-card-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+    }
+    .service-card-icon.orb::before,
+    .service-card-icon.orb::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(21,159,230,.28);
+    }
+    .service-card-icon.orb::before { inset: 10px; }
+    .service-card-icon.orb::after { inset: 18px; }
+    .service-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .service-card-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(16,17,20,.08);
+      color: #404856;
+      background: rgba(255,255,255,.84);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .service-card-button[data-tone="dark"] .service-card-chip {
+      color: rgba(255,255,255,.8);
+      border-color: rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+    }
+    .service-card-arrow {
+      color: var(--nr-blue);
+      font-size: 18px;
+      font-weight: 900;
+      transition: transform .2s ease;
+    }
+    .service-card-button:hover .service-card-arrow,
+    .service-card-button.is-active .service-card-arrow {
+      transform: translateX(4px);
+    }
+
+    .service-detail-shell {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(320px, 1.1fr);
+      gap: 26px;
+      margin-top: 24px;
+      min-height: 700px;
+      padding: 28px;
+      border: 1px solid rgba(16,17,20,.08);
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 88% 14%, rgba(21,159,230,.12), transparent 26%),
+        linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,250,253,.98));
+      box-shadow: var(--shadow-soft);
+      transition: transform .32s cubic-bezier(.22,1,.36,1), border-color .24s ease, box-shadow .24s ease, background .24s ease;
+    }
+    .service-detail-shell[data-tone="dark"] {
+      color: #fff;
+      border-color: rgba(255,255,255,.1);
+      background:
+        radial-gradient(circle at 84% 16%, rgba(21,159,230,.18), transparent 24%),
+        linear-gradient(180deg, rgba(10,12,18,.98), rgba(14,18,26,.98));
+      box-shadow: 0 26px 54px rgba(7,12,20,.18);
+    }
+    .service-detail-shell.is-paused-hover {
+      border-color: rgba(21,159,230,.42);
+      box-shadow:
+        0 0 0 1px rgba(21,159,230,.16),
+        0 28px 60px rgba(21,159,230,.12),
+        0 0 42px rgba(21,159,230,.12);
+      transform: translateY(-6px) scale(1.006);
+      background:
+        radial-gradient(circle at 88% 14%, rgba(21,159,230,.18), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,250,253,.99));
+    }
+    .service-detail-shell[data-tone="dark"].is-paused-hover {
+      border-color: rgba(21,159,230,.58);
+      box-shadow:
+        0 0 0 1px rgba(21,159,230,.2),
+        0 32px 68px rgba(7,12,20,.26),
+        0 0 52px rgba(21,159,230,.16);
+      transform: translateY(-6px) scale(1.006);
+      background:
+        radial-gradient(circle at 84% 16%, rgba(21,159,230,.24), transparent 26%),
+        linear-gradient(180deg, rgba(10,12,18,.99), rgba(14,18,26,.99));
+    }
+    .service-detail-shell.is-switching .service-detail-copy,
+    .service-detail-shell.is-switching .service-detail-visual {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    .service-detail-copy,
+    .service-detail-visual {
+      transition: opacity .22s ease, transform .22s ease;
+    }
+    .service-detail-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .service-detail-kicker {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(16,17,20,.08);
+      background: rgba(255,255,255,.88);
+      color: #404856;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .service-detail-shell[data-tone="dark"] .service-detail-kicker {
+      color: rgba(255,255,255,.82);
+      border-color: rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+    }
+    .service-detail-stat {
+      max-width: 220px;
+      text-align: right;
+    }
+    .service-detail-stat small {
+      display: block;
+      color: #7a808c;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .service-detail-shell[data-tone="dark"] .service-detail-stat small {
+      color: rgba(255,255,255,.56);
+    }
+    .service-detail-stat span {
+      display: block;
+      margin-top: 8px;
+      color: #343c49;
+      font-size: 14px;
+      line-height: 1.65;
+      font-weight: 700;
+    }
+    .service-detail-shell[data-tone="dark"] .service-detail-stat span {
+      color: rgba(255,255,255,.76);
+    }
+    .service-detail-title {
+      max-width: 620px;
+      margin-top: 22px;
+      font-size: clamp(38px, 4.2vw, 64px);
+      line-height: .96;
+      letter-spacing: -.07em;
+    }
+    .service-detail-description {
+      max-width: 560px;
+      margin-top: 18px;
+      color: #4b5563;
+      font-size: 18px;
+      line-height: 1.78;
+    }
+    .service-detail-shell[data-tone="dark"] .service-detail-description {
+      color: rgba(255,255,255,.78);
+    }
+    .service-detail-bullets {
+      display: grid;
+      gap: 12px;
+      margin-top: 26px;
+      padding: 0;
+      list-style: none;
+    }
+    .service-detail-bullets li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+    .service-detail-bullets li::before {
+      content: "+";
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--nr-orange);
+      font-size: 13px;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+    .service-detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .service-detail-visual {
+      position: relative;
+      min-height: 640px;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid rgba(16,17,20,.06);
+      background: #eaf4fb;
+      isolation: isolate;
+    }
+    .service-detail-shell[data-tone="dark"] .service-detail-visual {
+      border-color: rgba(255,255,255,.08);
+      background: #0d1118;
+    }
+    .service-detail-visual iframe,
+    .service-detail-visual img {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      object-fit: cover;
+    }
+    .service-detail-visual.tours {
+      background:
+        linear-gradient(180deg, rgba(245,250,255,.98), rgba(230,240,248,.96)),
+        radial-gradient(circle at 72% 24%, rgba(21,159,230,.16), transparent 24%);
+    }
+    .service-detail-visual.tours::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.76), rgba(255,255,255,.18)),
+        url("https://novoreperio.com/wp-content/uploads/2023/10/3.webp") center/cover;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.48);
+    }
+    .service-detail-visual.tours::after {
+      content: "360";
+      position: absolute;
+      right: 34px;
+      bottom: 30px;
+      width: 126px;
+      height: 126px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--nr-blue-dark);
+      background: radial-gradient(circle at 34% 34%, rgba(255,255,255,.96), rgba(21,159,230,.18) 38%, rgba(21,159,230,.08) 62%, transparent 74%);
+      border: 1px solid rgba(21,159,230,.2);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.64);
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: .18em;
+    }
+    .service-detail-visual.drone {
+      background:
+        linear-gradient(180deg, rgba(8,11,17,.16), rgba(8,11,17,.84)),
+        url("https://novoreperio.com/wp-content/uploads/2020/11/1A4A8643-scaled.jpg") center/cover;
+    }
+    .service-detail-drone-image {
+      position: absolute;
+      right: 26px;
+      bottom: 12px;
+      width: min(300px, 46%);
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 36px rgba(0,0,0,.24));
+    }
+    .service-detail-note {
+      position: absolute;
+      left: 22px;
+      right: auto;
+      bottom: 22px;
+      max-width: 260px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      color: #fff;
+      background: rgba(10,12,18,.8);
+      border: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(16px);
+      font-size: 13px;
+      line-height: 1.65;
+      font-weight: 700;
+      z-index: 2;
+    }
+
+    @media (max-width: 1180px) {
+      .service-card-grid,
+      .service-detail-shell {
+        grid-template-columns: 1fr;
+      }
+      .service-detail-visual {
+        min-height: 500px;
+      }
+      .service-detail-stat {
+        max-width: none;
+        text-align: left;
+      }
+    }
+
+    .service-jump {
+      position: sticky;
+      top: 72px;
+      z-index: 20;
+      padding: 18px 0 0;
+      margin-top: -44px;
+    }
+    .service-jump-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      width: max-content;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow-soft);
+    }
+    .service-jump a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: #3a3d45;
+      background: #fff;
+      font-size: 13px;
+      font-weight: 900;
+      transition: color .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .service-jump a:hover,
+    .service-jump a.is-active {
+      color: var(--nr-blue);
+      border-color: rgba(21,159,230,.28);
+      background: #f8fcff;
+      box-shadow: 0 10px 24px rgba(21,159,230,.08);
+    }
+
+    .services-showcase {
+      display: grid;
+      gap: 30px;
+    }
+    .service-banner {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(420px, .95fr);
+      gap: 36px;
+      min-height: 700px;
+      padding: 42px;
+      border: 1px solid rgba(16,17,20,.08);
+      border-radius: 38px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,250,253,.98)),
+        radial-gradient(circle at 88% 18%, rgba(21,159,230,.12), transparent 26%);
+      box-shadow: var(--shadow-soft);
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .8s ease, transform .8s ease;
+      scroll-margin-top: 150px;
+    }
+    .service-banner.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .service-banner::before {
+      content: "";
+      position: absolute;
+      inset: auto -8% -24% auto;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(21,159,230,.14), transparent 62%);
+      filter: blur(12px);
+      pointer-events: none;
+    }
+    .service-banner.is-dark {
+      color: #fff;
+      border-color: rgba(255,255,255,.08);
+      background:
+        linear-gradient(180deg, rgba(10,12,18,.98), rgba(13,17,24,.98)),
+        radial-gradient(circle at 84% 20%, rgba(21,159,230,.18), transparent 24%);
+    }
+    .service-banner.is-dark .service-banner-subtitle,
+    .service-banner.is-dark .service-banner-description,
+    .service-banner.is-dark .service-banner-proof,
+    .service-banner.is-dark .service-banner-tags span,
+    .service-banner.is-dark .service-flow {
+      color: rgba(255,255,255,.78);
+    }
+    .service-banner.is-dark .service-banner-tags span,
+    .service-banner.is-dark .service-banner-stat {
+      border-color: rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+    }
+    .service-banner.is-dark .service-banner-panel {
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.1);
+    }
+
+    .service-banner-copy {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      min-width: 0;
+    }
+    .service-banner-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .service-banner-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #fff;
+      background: #2b313c;
+    }
+    .service-banner-kicker {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.9);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #3e4654;
+    }
+    .service-banner.is-dark .service-banner-kicker {
+      color: #fff;
+      border-color: rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+    }
+    .service-banner-title {
+      max-width: 720px;
+      margin-top: 22px;
+      font-size: clamp(46px, 5vw, 80px);
+      line-height: .94;
+      letter-spacing: -.07em;
+    }
+    .service-banner-subtitle {
+      max-width: 620px;
+      margin-top: 16px;
+      color: #2e3540;
+      font-size: 22px;
+      line-height: 1.36;
+      letter-spacing: -.03em;
+    }
+    .service-banner-description {
+      max-width: 610px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.82;
+    }
+    .service-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 26px;
+      color: #3d4654;
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .service-flow span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.9);
+    }
+    .service-flow i {
+      font-style: normal;
+      color: var(--nr-blue);
+      opacity: .82;
+    }
+    .service-banner-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .service-banner-bottom {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .service-banner-stat {
+      min-height: 136px;
+      padding: 18px 18px 20px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.88);
+    }
+    .service-banner-stat small {
+      display: block;
+      margin-bottom: 12px;
+      color: #7a808c;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .service-banner-stat p {
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.45;
+      letter-spacing: -.02em;
+    }
+
+    .service-banner-visual {
+      position: relative;
+      min-height: 100%;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(16,17,20,.06);
+      background: linear-gradient(180deg, rgba(248,251,255,.92), rgba(236,244,252,.92));
+      isolation: isolate;
+    }
+    .service-banner.is-dark .service-banner-visual {
+      border-color: rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(14,18,26,.82), rgba(12,16,24,.95));
+    }
+    .service-banner-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .service-banner-visual.matterport::before {
+      background:
+        linear-gradient(180deg, rgba(8,10,16,.1), rgba(8,10,16,.88)),
+        url("https://novoreperio.com/wp-content/uploads/2023/10/01.18.2023_13.45.49.webp") center/cover;
+    }
+    .service-banner-visual.tours::before {
+      background:
+        radial-gradient(circle at 70% 24%, rgba(255,255,255,.85), rgba(21,159,230,.14) 24%, transparent 36%),
+        linear-gradient(180deg, rgba(247,251,255,.98), rgba(236,245,253,.96));
+    }
+    .service-banner-visual.drone::before {
+      background:
+        linear-gradient(180deg, rgba(10,12,18,.2), rgba(10,12,18,.86)),
+        url("https://novoreperio.com/wp-content/uploads/2020/11/1A4A8643-scaled.jpg") center/cover;
+    }
+    .service-banner-visual.website::before {
+      background:
+        radial-gradient(circle at 72% 18%, rgba(21,159,230,.18), transparent 26%),
+        linear-gradient(180deg, rgba(245,250,255,.98), rgba(230,240,248,.96));
+    }
+
+    .visual-copy-card {
+      position: absolute;
+      left: 28px;
+      right: auto;
+      bottom: 28px;
+      max-width: 280px;
+      padding: 18px 18px 16px;
+      border-radius: 20px;
+      color: #fff;
+      background: rgba(10,12,18,.84);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,.08);
+      z-index: 2;
+      transition: transform .8s ease .08s, opacity .8s ease .08s;
+    }
+    .service-banner:not(.is-visible) .visual-copy-card,
+    .service-banner:not(.is-visible) .visual-object {
+      opacity: 0;
+      transform: translateY(26px);
+    }
+    .visual-copy-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+      line-height: 1.3;
+      letter-spacing: -.03em;
+    }
+    .visual-copy-card span {
+      display: block;
+      color: rgba(255,255,255,.74);
+      font-size: 13px;
+      line-height: 1.68;
+    }
+
+    .visual-object {
+      position: absolute;
+      right: 24px;
+      bottom: 0;
+      z-index: 1;
+      transition: transform .9s ease .1s, opacity .9s ease .1s;
+    }
+    .visual-device {
+      width: min(390px, 64%);
+      filter: drop-shadow(0 22px 38px rgba(0,0,0,.22));
+    }
+    .visual-drone {
+      width: min(260px, 48%);
+      right: 30px;
+      bottom: 34px;
+      filter: drop-shadow(0 18px 34px rgba(0,0,0,.22));
+    }
+    .visual-orb-wrap {
+      position: absolute;
+      right: 42px;
+      bottom: 36px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, rgba(255,255,255,.95), rgba(21,159,230,.2) 34%, rgba(21,159,230,.08) 58%, transparent 74%);
+      box-shadow: inset 0 0 0 1px rgba(21,159,230,.24);
+      z-index: 1;
+      transition: transform .9s ease .1s, opacity .9s ease .1s;
+    }
+    .visual-orb-wrap::before,
+    .visual-orb-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 50%;
+      border: 1px solid rgba(21,159,230,.25);
+    }
+    .visual-orb-wrap::after { inset: 30px; }
+    .visual-orb-wrap span {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--nr-blue);
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+    .visual-browser-stack {
+      position: absolute;
+      right: 28px;
+      bottom: 24px;
+      width: min(420px, 82%);
+      height: 74%;
+      z-index: 1;
+      transition: transform .9s ease .1s, opacity .9s ease .1s;
+    }
+    .visual-browser-back,
+    .visual-browser-front {
+      position: absolute;
+      border-radius: 28px;
+      border: 1px solid rgba(21,159,230,.16);
+      background: linear-gradient(180deg, rgba(232,244,254,.96), rgba(219,236,249,.94));
+      box-shadow: 0 20px 42px rgba(21,159,230,.14);
+    }
+    .visual-browser-back {
+      inset: 14% 18% 14% 0;
+      opacity: .86;
+    }
+    .visual-browser-front {
+      inset: 0 0 0 24%;
+      overflow: hidden;
+    }
+    .visual-browser-front::before {
+      content: "";
+      display: block;
+      height: 18px;
+      background: rgba(16,17,20,.08);
+    }
+    .visual-browser-front::after {
+      content: "";
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      top: 38px;
+      bottom: 14px;
+      border-radius: 20px;
+      background: rgba(21,159,230,.12);
+    }
+
+    .service-banner-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .service-banner-tags span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.88);
+      color: #3e4653;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .service-banner-proof {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .support-section {
+      background: linear-gradient(180deg, #fff, #f9fbfe);
+    }
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+    .bundle-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .support-card,
+    .bundle-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+    .support-card {
+      grid-column: span 3;
+      display: flex;
+      min-height: 210px;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+    }
+    .support-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(16,17,20,.12);
+      border-color: rgba(21,159,230,.2);
+    }
+    .support-card.featured {
+      grid-column: span 6;
+      color: #fff;
+      background:
+        radial-gradient(circle at 84% 14%, rgba(21,159,230,.22), transparent 26%),
+        linear-gradient(180deg, rgba(10,12,18,.98), rgba(14,18,26,.98));
+      border-color: rgba(255,255,255,.08);
+      box-shadow: 0 24px 50px rgba(7,12,20,.18);
+    }
+    .support-card.featured:hover {
+      box-shadow: 0 28px 58px rgba(7,12,20,.24);
+      border-color: rgba(21,159,230,.34);
+    }
+    .support-card small,
+    .bundle-card small,
+    .process-step small {
+      display: block;
+      margin-bottom: 12px;
+      color: #7a808c;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .support-card.featured small {
+      color: rgba(255,255,255,.58);
+    }
+    .support-card h3,
+    .bundle-card h3 {
+      font-size: 24px;
+      line-height: 1.08;
+      letter-spacing: -.05em;
+    }
+    .support-card.featured h3 {
+      max-width: 320px;
+      font-size: clamp(30px, 3vw, 42px);
+      line-height: .98;
+    }
+    .support-card p,
+    .bundle-card p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.72;
+    }
+    .support-card.featured p {
+      max-width: 520px;
+      color: rgba(255,255,255,.76);
+      font-size: 16px;
+    }
+    .support-card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: auto;
+    }
+    .support-card-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(16,17,20,.08);
+      color: #556070;
+      background: rgba(255,255,255,.84);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .support-card.featured .support-card-chip {
+      color: rgba(255,255,255,.82);
+      border-color: rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+    }
+    .support-card-arrow {
+      color: var(--nr-blue);
+      font-size: 18px;
+      font-weight: 900;
+      transition: transform .2s ease;
+    }
+    .support-card:hover .support-card-arrow {
+      transform: translateX(4px);
+    }
+    .bundle-card strong {
+      display: block;
+      margin-top: 14px;
+      color: var(--nr-blue);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .process-board {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 22px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: linear-gradient(180deg, #fff, #fbfcfe);
+      box-shadow: var(--shadow-soft);
+    }
+    .process-intro {
+      padding: 28px;
+      border-radius: 26px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(21,159,230,.18), transparent 28%),
+        linear-gradient(180deg, rgba(10,12,18,.98), rgba(13,17,24,.98));
+    }
+    .process-intro h3 {
+      max-width: 500px;
+      margin-top: 18px;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: .98;
+      letter-spacing: -.06em;
+    }
+    .process-intro p {
+      max-width: 520px;
+      margin-top: 18px;
+      color: rgba(255,255,255,.8);
+      font-size: 16px;
+      line-height: 1.82;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .process-step {
+      padding: 26px 22px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+    }
+    .process-step strong {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 24px;
+      line-height: 1.08;
+      letter-spacing: -.04em;
+    }
+    .process-step p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.72;
+    }
+
+    .final-cta { padding: 0 0 84px; }
+    .cta-panel {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 34px 38px;
+      border-radius: 26px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 84% 22%, rgba(21,159,230,.22), transparent 24%),
+        linear-gradient(180deg, rgba(10,12,18,.98), rgba(13,17,24,.98));
+      box-shadow: var(--shadow);
+    }
+    .cta-panel h2 {
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: .98;
+      letter-spacing: -.06em;
+    }
+    .cta-panel p {
+      max-width: 680px;
+      margin-top: 14px;
+      color: rgba(255,255,255,.78);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .site-footer {
+      padding: 74px 0 24px;
+      color: #fff;
+      background: #0c0d11;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr repeat(4, 1fr);
+      gap: 26px;
+      align-items: start;
+    }
+    .newsletter h3 {
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.02;
+      letter-spacing: -.05em;
+    }
+    .newsletter p {
+      margin-top: 14px;
+      color: rgba(255,255,255,.68);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .subscribe {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .subscribe input {
+      flex: 1;
+      min-width: 0;
+      min-height: 52px;
+      padding: 0 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      color: #fff;
+      background: rgba(255,255,255,.06);
+    }
+    .subscribe button {
+      min-height: 52px;
+      padding: 0 20px;
+      border: 0;
+      border-radius: 14px;
+      color: #fff;
+      background: var(--nr-blue);
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .footer-col h4 {
+      margin-bottom: 16px;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .footer-col a,
+    .footer-bottom span,
+    .footer-bottom a {
+      color: rgba(255,255,255,.68);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    .footer-col a {
+      display: block;
+      margin-top: 6px;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .footer-bottom-links { display: flex; gap: 18px; }
+
+    @media (max-width: 1180px) {
+      .hero-layout,
+      .process-board,
+      .cta-panel,
+      .service-banner {
+        grid-template-columns: 1fr;
+      }
+      .hero-visual-stage { min-height: 580px; }
+      .service-banner {
+        min-height: auto;
+      }
+      .service-banner-visual {
+        min-height: 440px;
+      }
+      .support-grid,
+      .bundle-grid,
+      .process-grid,
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .support-card {
+        grid-column: span 6;
+      }
+      .support-card.featured {
+        grid-column: span 12;
+      }
+      .service-banner-bottom {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .container,
+      .wide-shell {
+        padding-inline: 10px;
+      }
+      .nav { min-height: 66px; }
+      .nav-links { display: none; }
+      .nav-actions .btn-secondary { display: none; }
+      .brand-mark { width: 164px; height: 34px; }
+      .services-hero { padding: 72px 0 88px; }
+      .hero-visual-stage { min-height: 520px; }
+      .hero-main-frame { inset: 18px 0 18px 0; border-radius: 30px; }
+      .hero-main-frame::after { inset: 16px; }
+      .hero-service-tile { width: 176px; padding: 16px; }
+      .hero-service-tile strong { font-size: 20px; }
+      .hero-service-tile p { max-width: 120px; }
+      .hero-service-tile.matterport { top: 26px; right: 10px; width: 182px; }
+      .hero-service-tile.drone { right: 10px; bottom: 24px; }
+      .hero-frame-copy { top: 26px; left: 22px; max-width: 220px; padding: 18px; }
+      .hero-stage-actions { left: 22px; bottom: 22px; right: 104px; gap: 10px; }
+      .hero-stage-cta { min-height: 50px; padding: 0 18px; font-size: 12px; }
+      .hero-visual-rail { gap: 8px; padding: 10px; }
+      .hero-visual-rail span { min-height: 30px; font-size: 10px; letter-spacing: .09em; }
+      .service-card-grid { grid-template-columns: 1fr; gap: 14px; }
+      .service-card-button { min-height: 168px; padding: 18px; }
+      .service-card-copy strong { max-width: none; font-size: 22px; }
+      .service-detail-shell { min-height: 0; padding: 18px; border-radius: 24px; }
+      .service-detail-title { font-size: clamp(32px, 11vw, 48px); }
+      .service-detail-description { font-size: 16px; }
+      .service-detail-visual { min-height: 360px; }
+      .service-detail-note { left: 14px; right: 14px; max-width: none; bottom: 14px; }
+      .service-detail-drone-image { width: min(220px, 54%); right: 14px; }
+      .service-jump { top: 66px; }
+      .service-jump-inner { width: 100%; overflow-x: auto; flex-wrap: nowrap; justify-content: start; }
+      .service-jump a { white-space: nowrap; }
+      .service-banner { padding: 28px 22px; border-radius: 28px; }
+      .service-banner-title { font-size: clamp(38px, 12vw, 58px); }
+      .service-banner-subtitle { font-size: 18px; }
+      .service-banner-description { font-size: 15px; }
+      .service-banner-visual { min-height: 360px; }
+      .visual-copy-card { left: 18px; right: 18px; max-width: none; bottom: 18px; }
+      .visual-orb-wrap { right: 16px; bottom: 18px; width: 200px; height: 200px; }
+      .visual-browser-stack { right: 16px; left: 16px; width: auto; }
+      .support-grid,
+      .bundle-grid,
+      .process-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .support-card,
+      .support-card.featured {
+        grid-column: span 12;
+        min-height: 0;
+      }
+      .footer-grid { gap: 20px; }
+      .subscribe { flex-direction: column; }
+      .subscribe button { width: 100%; }
+      .footer-bottom { flex-direction: column; align-items: start; }
+    }
+  </style>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/" class="brand" aria-label="Novo Reperio home">
+        <img class="brand-mark" src="/images/Novo-logo-for-website.png.webp" alt="Novo Reperio" loading="eager" />
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="is-active" href="/services">Services</a>
+        <a href="/works">Works</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/insights">Insights</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="/works">See Our Work</a>
+        <a class="btn btn-primary" href="/contact">Request Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="top-services" class="services-hero">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <span class="eyebrow">Service Stack</span>
+          <h1>Choose the right service layer for the decision you need to move.</h1>
+          <p>Matterport tours, 360 virtual tours, and drone aerial visuals for teams that need spaces to be understood before the visit happens.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/contact">Request Quote</a>
+            <a class="btn btn-secondary" href="#services-overview">Explore Services</a>
+          </div>
+          <div class="hero-proof">
+            <span>Three core services. One clear sales story.</span>
+            <span>Matterport, 360, and aerial coverage</span>
+            <span>Malaysia-based since 2014</span>
+          </div>
+        </div>
+        <div class="hero-visual-stage">
+          <div class="hero-main-frame"></div>
+          <div class="hero-service-tile matterport" aria-hidden="true">
+            <small>Primary layer</small>
+            <strong>Matterport + 360</strong>
+            <p>Deep spatial review for layouts, flow, and finish.</p>
+          </div>
+          <div class="hero-service-tile drone" aria-hidden="true">
+            <small>Context layer</small>
+            <strong>Drone & Aerial</strong>
+            <p>For access, arrival, frontage, and surroundings.</p>
+            <img class="mini-drone" src="/images/drone.png" alt="" loading="lazy" />
+          </div>
+          <div class="hero-frame-copy">
+            <strong>Lead with one strong spatial preview.</strong>
+            <span>Use the hero as a clear visual hook, then let the detailed service panel do the deeper selling below.</span>
+          </div>
+          <div class="hero-stage-actions">
+            <a class="hero-stage-cta" href="#matterport">Open Live Matterport Tour</a>
+            <div class="hero-visual-rail" aria-hidden="true">
+              <span class="is-accent">Matterport 3D</span>
+              <span>360 Tours</span>
+              <span>Drone & Aerial</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services-overview" class="section services-overview" data-service-rotator>
+      <div class="wide-shell">
+        <div class="section-title">
+          <h2>Scan the three core services fast, then open the one that matches the decision you need to move.</h2>
+          <p>The layout stays short, clear, and conversion-focused: three clickable summaries above, one large detail panel below.</p>
+        </div>
+        <div class="service-card-grid" aria-label="Main service options">
+          {mainServices.map((service, index) => (
+            <button
+              id={service.id}
+              class={`service-card-button ${index === 0 ? "is-active" : ""}`}
+              type="button"
+              data-service-card
+              data-service-id={service.id}
+              data-tone={service.cardTone}
+              aria-pressed={index === 0 ? "true" : "false"}
+            >
+              <div class="service-card-top">
+                <div class="service-card-copy">
+                  <strong>{service.label}</strong>
+                  <p>{service.cardBenefit}</p>
+                </div>
+                <div class={`service-card-icon ${service.visual === "tours" ? "orb" : ""}`} aria-hidden="true">
+                  {service.visual === "matterport" && (
+                    <img src="/images/matterport-pro3.png" alt="" loading="lazy" />
+                  )}
+                  {service.visual === "tours" && <span>{service.iconLabel}</span>}
+                  {service.visual === "drone" && (
+                    <img src="/images/drone.png" alt="" loading="lazy" />
+                  )}
+                </div>
+              </div>
+              <div class="service-card-footer">
+                <span class="service-card-chip">Click to expand</span>
+                <span class="service-card-arrow" aria-hidden="true">-></span>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <div class="service-detail-shell" data-service-panel data-tone={defaultService.cardTone}>
+          <div class="service-detail-copy">
+            <div class="service-detail-top">
+              <span class="service-detail-kicker" data-service-kicker>{defaultService.label}</span>
+              <div class="service-detail-stat">
+                <small data-service-stat-label>{defaultService.statLabel}</small>
+                <span data-service-stat-value>{defaultService.statValue}</span>
+              </div>
+            </div>
+            <h3 class="service-detail-title" data-service-title>{defaultService.detailTitle}</h3>
+            <p class="service-detail-description" data-service-description>{defaultService.detailDescription}</p>
+            <ul class="service-detail-bullets" data-service-bullets>
+              {defaultService.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>
+            <div class="service-detail-actions">
+              <a class="btn btn-primary" href={defaultService.primaryCtaUrl} data-service-primary-cta>{defaultService.primaryCtaLabel}</a>
+              <a class="btn btn-light" href={defaultService.secondaryCtaUrl} data-service-secondary-cta>{defaultService.secondaryCtaLabel}</a>
+            </div>
+          </div>
+
+          <div class={`service-detail-visual ${defaultService.visual}`} data-service-visual>
+            <iframe
+              src={defaultService.iframeSrc}
+              title={defaultService.iframeTitle}
+              loading="lazy"
+              allow="fullscreen; xr-spatial-tracking; vr"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="support-services" class="section support-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Support layers when the core walkthrough is not enough on its own.</h2>
+          <p>Use these when the project needs more polish, stronger future-state storytelling, or broader campaign collateral around the main spatial layer.</p>
+        </div>
+        <div class="support-grid">
+          {supportServices.map((service) => (
+            <article class={`support-card ${service.featured ? "featured" : ""}`}>
+              <small>{service.label}</small>
+              <h3>{service.title}</h3>
+              <p>{service.body}</p>
+              <div class="support-card-foot">
+                <span class="support-card-chip">{service.featured ? "Featured layer" : "Support layer"}</span>
+                <span class="support-card-arrow" aria-hidden="true">-></span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="scope-process" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>How Novo scopes the service stack.</h2>
+          <p>Every recommendation starts with the type of space, the decision the digital experience needs to support, and the level of polish the audience expects.</p>
+        </div>
+        <div class="process-board">
+          <div class="process-intro">
+            <span class="eyebrow">Service Planning</span>
+            <h3>One process. Different outputs. Built around the use case.</h3>
+            <p>Novo does not force projects into a fixed package. The final mix depends on what the space must communicate, where the asset will live, and what confidence the audience needs before they arrive.</p>
+          </div>
+          <div class="process-grid">
+            {serviceSteps.map((step) => (
+              <article class="process-step">
+                <small>Step</small>
+                <strong>{step.label}</strong>
+                <p>{step.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service-bundles" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Typical service paths based on the kind of project you are trying to move.</h2>
+          <p>Most projects do not need everything. They need the right combination for the audience, the asset, and the decision that needs to happen next.</p>
+        </div>
+        <div class="bundle-grid">
+          {serviceBundles.map((bundle) => (
+            <article class="bundle-card">
+              <small>Typical use case</small>
+              <h3>{bundle.title}</h3>
+              <strong>{bundle.combo}</strong>
+              <p>{bundle.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container cta-panel">
+        <div>
+          <h2>Need the right service mix for your space?</h2>
+          <p>Novo Reperio can help scope the capture, support media, and launch format that best fits your venue, property, facility, showroom, or cultural space.</p>
+        </div>
+        <div class="cta-buttons">
+          <a class="btn btn-primary" href="/contact">Request Quote</a>
+          <a class="btn btn-secondary" href="/works">See Our Work</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script define:vars={{ mainServices }}>
+    const serviceRotator = document.querySelector("[data-service-rotator]");
+    const serviceCards = Array.from(document.querySelectorAll("[data-service-card]"));
+    const servicePanel = document.querySelector("[data-service-panel]");
+    const serviceVisual = document.querySelector("[data-service-visual]");
+    const serviceKicker = document.querySelector("[data-service-kicker]");
+    const serviceStatLabel = document.querySelector("[data-service-stat-label]");
+    const serviceStatValue = document.querySelector("[data-service-stat-value]");
+    const serviceTitle = document.querySelector("[data-service-title]");
+    const serviceDescription = document.querySelector("[data-service-description]");
+    const serviceBullets = document.querySelector("[data-service-bullets]");
+    const servicePrimaryCta = document.querySelector("[data-service-primary-cta]");
+    const serviceSecondaryCta = document.querySelector("[data-service-secondary-cta]");
+
+    if (
+      serviceCards.length &&
+      servicePanel &&
+      serviceVisual &&
+      serviceKicker &&
+      serviceStatLabel &&
+      serviceStatValue &&
+      serviceTitle &&
+      serviceDescription &&
+      serviceBullets &&
+      servicePrimaryCta &&
+      serviceSecondaryCta
+    ) {
+      let activeServiceId = mainServices[0]?.id || "";
+      let switchTimer;
+      let autoRotateTimer;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const renderVisual = (service) => {
+        if (service.visual === "matterport") {
+          return `
+            <div class="service-detail-visual matterport" data-service-visual>
+              <iframe
+                src="${service.iframeSrc}"
+                title="${service.iframeTitle}"
+                loading="lazy"
+                allow="fullscreen; xr-spatial-tracking; vr"
+                allowfullscreen
+              ></iframe>
+            </div>
+          `;
+        }
+
+        if (service.visual === "tours") {
+          return `
+            <div class="service-detail-visual tours" data-service-visual>
+              <div class="service-detail-note">Fast-loading guided virtual tours that are easy to open, share, and review on any device.</div>
+            </div>
+          `;
+        }
+
+        return `
+          <div class="service-detail-visual drone" data-service-visual>
+            <div class="service-detail-note">Show approach, surroundings, scale, and location context before the on-site visit begins.</div>
+            <img class="service-detail-drone-image" src="/images/drone.png" alt="" loading="lazy" />
+          </div>
+        `;
+      };
+
+      let currentVisual = serviceVisual;
+
+      const commitService = (service) => {
+        servicePanel.dataset.tone = service.cardTone;
+
+        const nextVisualMarkup = renderVisual(service);
+        currentVisual.insertAdjacentHTML("afterend", nextVisualMarkup);
+        currentVisual.remove();
+
+        const freshVisual = document.querySelector("[data-service-visual]");
+        serviceKicker.textContent = service.label;
+        serviceStatLabel.textContent = service.statLabel;
+        serviceStatValue.textContent = service.statValue;
+        serviceTitle.textContent = service.detailTitle;
+        serviceDescription.textContent = service.detailDescription;
+        serviceBullets.innerHTML = service.bullets.map((bullet) => `<li>${bullet}</li>`).join("");
+        servicePrimaryCta.textContent = service.primaryCtaLabel;
+        servicePrimaryCta.href = service.primaryCtaUrl;
+        serviceSecondaryCta.textContent = service.secondaryCtaLabel;
+        serviceSecondaryCta.href = service.secondaryCtaUrl;
+
+        return freshVisual;
+      };
+
+      const activateService = (id, updateHash = true) => {
+        if (!id) return;
+
+        const service = mainServices.find((item) => item.id === id);
+        if (!service || id === activeServiceId) return;
+
+        serviceCards.forEach((card) => {
+          const isActive = card.dataset.serviceId === id;
+          card.classList.toggle("is-active", isActive);
+          card.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+
+        servicePanel.classList.add("is-switching");
+        window.clearTimeout(switchTimer);
+
+        switchTimer = window.setTimeout(() => {
+          currentVisual = commitService(service) || currentVisual;
+          activeServiceId = id;
+          servicePanel.classList.remove("is-switching");
+        }, 260);
+
+        if (updateHash) {
+          history.replaceState(null, "", `#${id}`);
+        }
+      };
+
+      const startAutoRotate = () => {
+        if (prefersReducedMotion) return;
+        window.clearInterval(autoRotateTimer);
+        autoRotateTimer = window.setInterval(() => {
+          const currentIndex = mainServices.findIndex((item) => item.id === activeServiceId);
+          const nextIndex = (currentIndex + 1) % mainServices.length;
+          activateService(mainServices[nextIndex].id, false);
+        }, 7000);
+      };
+
+      const stopAutoRotate = () => {
+        window.clearInterval(autoRotateTimer);
+      };
+
+      serviceCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          activateService(card.dataset.serviceId);
+          startAutoRotate();
+        });
+        card.addEventListener("mouseenter", () => {
+          card.classList.add("is-paused-hover");
+        });
+        card.addEventListener("mouseleave", () => {
+          card.classList.remove("is-paused-hover");
+        });
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            activateService(card.dataset.serviceId);
+            startAutoRotate();
+          }
+        });
+      });
+
+      const activateFromHash = () => {
+        const hashId = window.location.hash.replace("#", "");
+        if (!hashId) return;
+
+        const card = serviceCards.find((item) => item.dataset.serviceId === hashId);
+        if (card) {
+          activateService(hashId, false);
+          card.scrollIntoView({ block: "nearest", behavior: "smooth" });
+        }
+      };
+
+      window.addEventListener("hashchange", activateFromHash);
+      activateFromHash();
+
+      if (serviceRotator) {
+        serviceRotator.addEventListener("mouseenter", stopAutoRotate);
+        serviceRotator.addEventListener("mouseleave", startAutoRotate);
+        serviceRotator.addEventListener("focusin", stopAutoRotate);
+        serviceRotator.addEventListener("focusout", startAutoRotate);
+      }
+
+      servicePanel.addEventListener("mouseenter", () => {
+        servicePanel.classList.add("is-paused-hover");
+      });
+
+      servicePanel.addEventListener("mouseleave", () => {
+        servicePanel.classList.remove("is-paused-hover");
+      });
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          stopAutoRotate();
+        } else {
+          startAutoRotate();
+        }
+      });
+
+      startAutoRotate();
+    }
+  </script>
+
+  <footer id="footer" class="site-footer">
+    <div class="container footer-grid">
+      <div class="newsletter">
+        <h3>Tell us about your space.</h3>
+        <p>Share the project type, location, and what the digital experience needs to help the audience understand more clearly.</p>
+        <form class="subscribe">
+          <input type="email" placeholder="Your email" aria-label="Email address" />
+          <button type="submit">Request Quote</button>
+        </form>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#matterport">Matterport 3D Virtual Tours</a>
+        <a href="#tours-360">360 Virtual Tours</a>
+        <a href="#drone-aerial">Drone & Aerial</a>
+        <a href="#support-services">Support Services</a>
+      </div>
+      <div class="footer-col">
+        <h4>Use Cases</h4>
+        <a href="#service-bundles">Venue Sales</a>
+        <a href="#service-bundles">Property Launch</a>
+        <a href="#service-bundles">Facilities Review</a>
+        <a href="/works">Project Work</a>
+        <a href="/contact">Request Consultation</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about">About Novo Reperio</a>
+        <a href="/works">Works</a>
+        <a href="/insights">Insights</a>
+        <a href="/contact">Contact</a>
+        <a href="/contact">Kuala Lumpur</a>
+      </div>
+      <div class="footer-col">
+        <h4>Next</h4>
+        <a href="/works">See project examples</a>
+        <a href="/contact">Start a brief</a>
+        <a href="/">Back to homepage</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <a class="brand" href="/"><img class="brand-mark" src="/images/Novo-logo-for-website.png.webp" alt="Novo Reperio" loading="lazy" /></a>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="/contact">Contact</a></div>
+      <span>Novo Reperio services overview.</span>
+    </div>
+  </footer>
+</SiteLayout>
