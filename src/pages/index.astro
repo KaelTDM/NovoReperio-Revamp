@@ -411,11 +411,13 @@ const renderLucideIcon = (iconNode) => {
       box-shadow: 0 0 14px rgba(21,159,230,.28);
     }
     .nav-links a:hover,
-    .nav-links a:focus-visible {
+    .nav-links a:focus-visible,
+    .nav-links a.is-active {
       color: #ffffff;
     }
     .nav-links a:hover::after,
-    .nav-links a:focus-visible::after {
+    .nav-links a:focus-visible::after,
+    .nav-links a.is-active::after {
       transform: scaleX(1);
       opacity: 1;
     }
@@ -2113,9 +2115,9 @@ const renderLucideIcon = (iconNode) => {
 
   <header class="site-header">
       <div class="container nav">
-        <a href="#" class="brand" aria-label="Novo Reperio home"><img class="brand-mark" src="/images/Novo-logo-for-website.png.webp" alt="Novo Reperio" loading="eager" /></a>
+        <a href="/" class="brand" aria-label="Novo Reperio home"><img class="brand-mark" src="/images/Novo-logo-for-website.png.webp" alt="Novo Reperio" loading="eager" /></a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="/services">Services</a><a href="/works">Works</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/insights">Insights</a>
+        <a class="is-active" href="/">Home</a><a href="/services">Services</a><a href="/works">Works</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/insights">Insights</a>
       </nav>
       <div class="nav-actions">
         <a class="btn btn-secondary" href="/works">See Our Work</a><a class="btn btn-primary" href="/contact">Request Quote</a>
