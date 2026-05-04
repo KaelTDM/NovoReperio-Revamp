@@ -1,0 +1,315 @@
+{
+  "source": "https://novoreperio.com/blog/",
+  "api": "https://novoreperio.com/wp-json/wp/v2/posts?per_page=100&_embed=1",
+  "syncedAt": "2026-05-04T07:20:28.472Z",
+  "totalPosts": 15,
+  "posts": [
+    {
+      "id": 10628,
+      "slug": "digital-twin-for-facility-management",
+      "link": "https://novoreperio.com/digital-twin-for-facility-management/",
+      "date": "2026-05-04T11:36:16",
+      "modified": "2026-05-04T11:36:16",
+      "titleHtml": "Digital Twin for Facility Management",
+      "excerptHtml": "<p>Learn how a digital twin for facility management improves maintenance, asset visibility, planning, and faster decisions across complex buildings.</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "Uncategorized"
+      ],
+      "tags": [],
+      "featuredImage": "https://novoreperio.com/wp-content/uploads/2026/05/digital-twin-for-facility-management-featured.webp",
+      "featuredImageAlt": "Digital Twin for Facility Management"
+    },
+    {
+      "id": 10625,
+      "slug": "matterport-virtual-tour-for-real-estate",
+      "link": "https://novoreperio.com/matterport-virtual-tour-for-real-estate/",
+      "date": "2026-05-03T11:36:17",
+      "modified": "2026-05-03T11:36:17",
+      "titleHtml": "Matterport Virtual Tour for Real Estate",
+      "excerptHtml": "<p>A Matterport virtual tour for real estate helps attract serious buyers, improve engagement, and speed up decisions with immersive property viewing.</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "Uncategorized"
+      ],
+      "tags": [],
+      "featuredImage": "https://novoreperio.com/wp-content/uploads/2026/05/matterport-virtual-tour-for-real-estate-featured.webp",
+      "featuredImageAlt": "Matterport Virtual Tour for Real Estate"
+    },
+    {
+      "id": 10623,
+      "slug": "lidar-scanning-for-buildings-that-pays-off",
+      "link": "https://novoreperio.com/lidar-scanning-for-buildings-that-pays-off/",
+      "date": "2026-05-02T11:42:47",
+      "modified": "2026-05-02T11:42:47",
+      "titleHtml": "LiDAR Scanning for Buildings That Pays Off",
+      "excerptHtml": "<p>LiDAR scanning for buildings helps teams capture accurate site data, reduce rework, support BIM workflows, and speed up planning decisions.</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "Uncategorized"
+      ],
+      "tags": [],
+      "featuredImage": "https://novoreperio.com/wp-content/uploads/2026/05/lidar-scanning-for-buildings-that-pays-off-featured.webp",
+      "featuredImageAlt": "LiDAR Scanning for Buildings That Pays Off"
+    },
+    {
+      "id": 10621,
+      "slug": "scan-to-bim-services-that-reduce-risk",
+      "link": "https://novoreperio.com/scan-to-bim-services-that-reduce-risk/",
+      "date": "2026-05-01T18:41:36",
+      "modified": "2026-05-01T18:41:36",
+      "titleHtml": "Scan to BIM Services That Reduce Risk",
+      "excerptHtml": "<p>Scan to BIM services turn site data into reliable models for renovation, FM, and planning &#8211; reducing errors, delays, and rework across projects.</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "Uncategorized"
+      ],
+      "tags": [],
+      "featuredImage": "https://novoreperio.com/wp-content/uploads/2026/05/scan-to-bim-services-that-reduce-risk-featured.webp",
+      "featuredImageAlt": "Scan to BIM Services That Reduce Risk"
+    },
+    {
+      "id": 10478,
+      "slug": "the-power-of-the-virtual-tour-redefining-real-estate-tourism-and-events",
+      "link": "https://novoreperio.com/the-power-of-the-virtual-tour-redefining-real-estate-tourism-and-events/",
+      "date": "2025-11-10T15:07:53",
+      "modified": "2025-11-10T15:07:54",
+      "titleHtml": "The Power of the Virtual Tour: Redefining Real Estate, Tourism, and Events",
+      "excerptHtml": "<p>Imagine exploring a beautiful event venue, touring a potential new home, or wandering through a seaside resort &#8211; all without leaving your desk. With the rise of digital twin technology and the 360 virtual tour, this isn’t just possible; it’s&#8230;</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "Uncategorized"
+      ],
+      "tags": [],
+      "featuredImage": null,
+      "featuredImageAlt": "The Power of the Virtual Tour: Redefining Real Estate, Tourism, and Events | Novo Reperio Sdn Bhd"
+    },
+    {
+      "id": 10456,
+      "slug": "green-smart-tech-powering-the-next-wave-of-sustainable-cities",
+      "link": "https://novoreperio.com/green-smart-tech-powering-the-next-wave-of-sustainable-cities/",
+      "date": "2025-11-06T14:55:00",
+      "modified": "2025-11-07T17:33:42",
+      "titleHtml": "Green, Smart, Tech: Powering the &lt;br> Next Wave of Sustainable Cities",
+      "excerptHtml": "<p>As Malaysia moves toward smarter and greener urbanisation, the synergy of green initiatives, intelligent infrastructure, and emerging technology is shaping the cities of tomorrow. A recent Nanyang Property feature underscores this trend — where “Green, Smart, Tech” defines the new&#8230;</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "News"
+      ],
+      "tags": [],
+      "featuredImage": "https://novoreperio.com/wp-content/uploads/2025/11/Nanyang-Property-1-copy.png",
+      "featuredImageAlt": "Green, Smart, Tech: Powering the &lt;br> Next Wave of Sustainable Cities | Novo Reperio Sdn Bhd"
+    },
+    {
+      "id": 10413,
+      "slug": "matterport-measurement-tool",
+      "link": "https://novoreperio.com/matterport-measurement-tool/",
+      "date": "2025-11-04T14:58:30",
+      "modified": "2025-11-04T17:02:27",
+      "titleHtml": "Matterport | Measurement Tool",
+      "excerptHtml": "<p>Rethink your site visits with Matterport’s innovative Measurement Tool, designed to enhance precision, speed, and collaboration. This integrated feature allows event planners, architects, and facility managers to capture exact dimensions within a 3D virtual tour, enabling remote measurement and management of spaces. Say goodbye to costly rework and travel, and transform your workflow into a data-rich experience. Discover how industries from real estate to education are leveraging this technology to streamline processes and improve outcomes. Ready to elevate your planning and decision-making? Dive into the world of Matterport and unlock the potential of virtual tours today!</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "360 Virtual Tour",
+        "Articles",
+        "Matterport",
+        "News",
+        "Virtual Tour"
+      ],
+      "tags": [
+        "digitaltwin",
+        "matterport",
+        "measurement-tool"
+      ],
+      "featuredImage": null,
+      "featuredImageAlt": "Matterport | Measurement Tool | Novo Reperio Sdn Bhd"
+    },
+    {
+      "id": 8624,
+      "slug": "matterport-digital-twins-in-hospitality-unpacking-the-visiting-media",
+      "link": "https://novoreperio.com/matterport-digital-twins-in-hospitality-unpacking-the-visiting-media/",
+      "date": "2025-05-16T17:17:28",
+      "modified": "2025-10-17T13:21:35",
+      "titleHtml": "Matterport Digital Twins In Hospitality: Unpacking The Visiting Media",
+      "excerptHtml": "<p>Virtual tours are transforming the way we approach large-scale spaces, offering a powerful tool for future-proofing architecture. By embracing this technology, you can ensure that your projects are not only visually stunning but also adaptable, sustainable, and efficient.</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "360 Virtual Tour",
+        "Virtual Tour"
+      ],
+      "tags": [
+        "large-scale spaces",
+        "large-scale spaces kuala lumpur",
+        "large-scale spaces malaysia",
+        "large-scale spaces singapore"
+      ],
+      "featuredImage": "https://novoreperio.com/wp-content/uploads/2024/08/1004-novo-reperio-large-scale-spaces_1.jpg",
+      "featuredImageAlt": "Grand ballroom with ornate chandeliers and multiple levels, an example of a large-scale hospitality space"
+    },
+    {
+      "id": 8620,
+      "slug": "event-venues-brought-to-life-with-novo-reperio",
+      "link": "https://novoreperio.com/event-venues-brought-to-life-with-novo-reperio/",
+      "date": "2025-05-16T17:16:19",
+      "modified": "2025-05-16T17:16:20",
+      "titleHtml": "Event Venues Brought To Life with Novo Reperio",
+      "excerptHtml": "<p>Virtual tours are transforming the way we approach large-scale spaces, offering a powerful tool for future-proofing architecture. By embracing this technology, you can ensure that your projects are not only visually stunning but also adaptable, sustainable, and efficient.</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "360 Virtual Tour",
+        "Virtual Tour"
+      ],
+      "tags": [
+        "large-scale spaces",
+        "large-scale spaces kuala lumpur",
+        "large-scale spaces malaysia",
+        "large-scale spaces singapore"
+      ],
+      "featuredImage": "https://novoreperio.com/wp-content/uploads/2024/08/1004-novo-reperio-large-scale-spaces_1.jpg",
+      "featuredImageAlt": "Grand ballroom with ornate chandeliers and multiple levels, an example of a large-scale hospitality space"
+    },
+    {
+      "id": 8379,
+      "slug": "pre-shooting-site-preparations",
+      "link": "https://novoreperio.com/pre-shooting-site-preparations/",
+      "date": "2025-03-26T22:11:56",
+      "modified": "2025-03-26T23:11:21",
+      "titleHtml": "Pre Shooting Site Preparations",
+      "excerptHtml": "<p>Site preparation checklist Standard Operating Procedure (SOP) for Preparing a Space for Matterport 3D Scanning, 360 Photography, or Commercial Photoshoot By following this checklist, clients can ensure a smooth and efficient 3D scanning, 360 photography, or commercial photoshoot process, resulting&#8230;</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "Instructions"
+      ],
+      "tags": [],
+      "featuredImage": "https://novoreperio.com/wp-content/uploads/2023/10/Casa-Bayu-Townhouse-Ground-Floor.webp",
+      "featuredImageAlt": "Pre Shooting Site Preparations | Novo Reperio Sdn Bhd"
+    },
+    {
+      "id": 5828,
+      "slug": "future-proofing-large-scale-spaces-the-role-of-virtual-tours-in-modern-architecture",
+      "link": "https://novoreperio.com/future-proofing-large-scale-spaces-the-role-of-virtual-tours-in-modern-architecture/",
+      "date": "2024-08-12T15:27:40",
+      "modified": "2024-08-12T15:39:44",
+      "titleHtml": "Future-Proofing Large-Scale Spaces: The Role of Virtual Tours in Modern Architecture",
+      "excerptHtml": "<p>Virtual tours are transforming the way we approach large-scale spaces, offering a powerful tool for future-proofing architecture. By embracing this technology, you can ensure that your projects are not only visually stunning but also adaptable, sustainable, and efficient.</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "360 Virtual Tour",
+        "Virtual Tour"
+      ],
+      "tags": [
+        "large-scale spaces",
+        "large-scale spaces kuala lumpur",
+        "large-scale spaces malaysia",
+        "large-scale spaces singapore"
+      ],
+      "featuredImage": "https://novoreperio.com/wp-content/uploads/2024/08/1004-novo-reperio-large-scale-spaces_1.jpg",
+      "featuredImageAlt": "Grand ballroom with ornate chandeliers and multiple levels, an example of a large-scale hospitality space"
+    },
+    {
+      "id": 5758,
+      "slug": "interactive-360-virtual-tours-in-asia",
+      "link": "https://novoreperio.com/interactive-360-virtual-tours-in-asia/",
+      "date": "2024-06-11T12:27:45",
+      "modified": "2024-06-11T12:28:03",
+      "titleHtml": "Interactive 360 Virtual Tours In Asia – View Buildings Like You Never Seen Them Before",
+      "excerptHtml": "<p>Virtual tours are changing how you experience and showcase spaces. As a building owner, property developer, museum curator, or conference center manager, you need to embrace this technology. Interactive 360 virtual tours let you showcase your buildings’ interiors with stunning&#8230;</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "360 Virtual Tour",
+        "Matterport",
+        "Virtual Tour"
+      ],
+      "tags": [
+        "360 tour",
+        "dihgital twins",
+        "interactive 360 virtual tours",
+        "interactive tour",
+        "virtual tour",
+        "virtual tour malaysia",
+        "virtual tour singapore",
+        "virtual tours",
+        "virtual tours asia",
+        "walkthrough"
+      ],
+      "featuredImage": "https://novoreperio.com/wp-content/uploads/2024/06/1003-novo-reperio-interactive-360-virtual-tours-asia-wtckl.jpg",
+      "featuredImageAlt": "A 360-degree view of the ornate, geometric dome ceiling of the World Trade Centre Kuala Lumpur, an example of an interactive virtual tour in Asia"
+    },
+    {
+      "id": 5734,
+      "slug": "how-virtual-tours-are-shaping-the-malaysian-digital-landscape",
+      "link": "https://novoreperio.com/how-virtual-tours-are-shaping-the-malaysian-digital-landscape/",
+      "date": "2024-05-20T12:06:01",
+      "modified": "2025-10-17T13:28:25",
+      "titleHtml": "How Virtual Tours Are Shaping The Malaysian Digital Landscape",
+      "excerptHtml": "<p>&nbsp; Virtual tours Malaysia are taking the country by storm. In the digital age, how you showcase your property matters. Whether you own a building, manage a museum, or run a conference center, staying ahead is key. This is where&#8230;</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "360 Virtual Tour",
+        "Matterport"
+      ],
+      "tags": [
+        "virtual tour",
+        "virtual tour singapore",
+        "virtual tours",
+        "virtual tours malaysia",
+        "virtual tours singapore",
+        "virtual your malaysia"
+      ],
+      "featuredImage": "https://novoreperio.com/wp-content/uploads/2023/10/muzium-negara.webp",
+      "featuredImageAlt": "Virtual Tours Malaysia | Novo Reperio Virtual Tours Revolution Now"
+    },
+    {
+      "id": 5711,
+      "slug": "matterport-is-transforming-spaces-into-virtual-realities-vr",
+      "link": "https://novoreperio.com/matterport-is-transforming-spaces-into-virtual-realities-vr/",
+      "date": "2024-04-18T11:17:41",
+      "modified": "2025-11-04T14:47:27",
+      "titleHtml": "Matterport Is Transforming Spaces Into Virtual Realities (VR)",
+      "excerptHtml": "<p>Matterport is the leading manufacturer for 360 cameras. In today’s fast-paced world, your business needs to stay ahead, and that means making the most of innovative technologies. For those of you in the MICE industry, there&#8217;s a game changer that&#8230;</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "360 Virtual Tour",
+        "Matterport"
+      ],
+      "tags": [
+        "3d camera",
+        "camera pro2",
+        "camera pro3",
+        "lidar camera",
+        "matterport",
+        "matterport camera",
+        "matterport camera pro2",
+        "matterport camera pro3",
+        "matterport malaysia",
+        "transforming spaces",
+        "virtual reality",
+        "vr"
+      ],
+      "featuredImage": "https://novoreperio.com/wp-content/uploads/2022/02/mac.webp",
+      "featuredImageAlt": "Matterport & Novo Reperio Virtual Tours | Top Virtual Reality Tech"
+    },
+    {
+      "id": 5631,
+      "slug": "how-virtual-tours-are-changing-our-world",
+      "link": "https://novoreperio.com/how-virtual-tours-are-changing-our-world/",
+      "date": "2024-03-13T14:34:51",
+      "modified": "2025-11-04T14:44:26",
+      "titleHtml": "How Virtual Tours Are Changing Our World",
+      "excerptHtml": "<p>You might not have noticed it, but Virtual Tours are creeping into our lives. In a world where technology shapes how we interact with our surroundings. Virtual tours stand out as a beacon of innovation. Imagine exploring the ancient ruins&#8230;</p>\n",
+      "author": "Novo Reperio",
+      "categories": [
+        "360 Virtual Tour",
+        "Matterport"
+      ],
+      "tags": [
+        "360 tour",
+        "360 yours",
+        "virtual tour",
+        "virtual tours"
+      ],
+      "featuredImage": "https://novoreperio.com/wp-content/uploads/2021/11/Kuala-Lumpur-Craft-Museum-10112021_132953.jpg",
+      "featuredImageAlt": "Virtual Tours Revolution | Novo Reperio's Innovative Approach"
+    }
+  ]
+}

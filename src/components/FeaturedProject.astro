@@ -28,9 +28,9 @@ const posterImage = resolveWorkImage(project, { width: 1800, height: 1200 });
 
 <section class="grid gap-4 md:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] md:items-stretch">
   <div class="flex flex-col gap-5 rounded-[18px] border border-black/8 bg-[linear-gradient(180deg,rgba(255,255,255,.99),rgba(248,250,253,.98))] p-5 shadow-[0_12px_30px_rgba(16,17,20,.08)] md:p-8">
-    <div class="flex flex-wrap items-center gap-2 text-[10px] font-black uppercase tracking-[0.16em]">
-      <span class="rounded-full bg-[#e4126a] px-3 py-1 text-white">Featured Project</span>
-      <span class="rounded-full border border-sky-500/16 bg-sky-50 px-3 py-1 text-sky-700">{project.serviceType}</span>
+    <div class="flex flex-wrap items-center gap-2 text-[10px] font-black">
+      <span class="rounded-full bg-[#e4126a] px-3 py-1 uppercase tracking-[0.16em] text-white">Featured Project</span>
+      <span class="rounded-full border border-sky-500 bg-sky-500 px-3 py-1 text-white">{project.serviceType}</span>
     </div>
 
     <div class="max-w-xl">
@@ -40,11 +40,6 @@ const posterImage = resolveWorkImage(project, { width: 1800, height: 1200 });
       <p class="mt-4 max-w-2xl text-base leading-8 text-zinc-700">
         {project.description}
       </p>
-      {project.impact && (
-        <p class="mt-4 max-w-2xl text-sm font-semibold leading-7 text-zinc-900">
-          {project.impact}
-        </p>
-      )}
     </div>
 
     {project.highlights && project.highlights.length > 0 && (
@@ -58,16 +53,11 @@ const posterImage = resolveWorkImage(project, { width: 1800, height: 1200 });
       </ul>
     )}
 
-    <div class="flex flex-wrap gap-2 text-[10px] font-black uppercase tracking-[0.16em] text-zinc-700">
-      {project.location && <span class="rounded-full border border-black/8 bg-white px-3 py-1">{project.location}</span>}
-      <span class="rounded-full border border-black/8 bg-white px-3 py-1">{project.industry}</span>
-    </div>
-
     <div class="flex flex-wrap gap-3 pt-1">
-      <a class="inline-flex min-h-12 items-center justify-center rounded-[14px] border border-sky-500 bg-sky-500 px-5 text-sm font-black uppercase tracking-[0.14em] text-white shadow-[0_12px_22px_rgba(21,159,230,.24)] transition hover:border-[#0f83bf] hover:bg-[#0f83bf]" href={project.viewUrl} target="_blank" rel="noreferrer">
+      <a class="inline-flex min-h-12 items-center justify-center rounded-[14px] border border-sky-500 bg-sky-500 px-5 text-sm font-black text-white shadow-[0_12px_22px_rgba(21,159,230,.24)] transition hover:border-[#0f83bf] hover:bg-[#0f83bf]" href={project.viewUrl} target="_blank" rel="noreferrer">
         View Project
       </a>
-      <a class="inline-flex min-h-12 items-center justify-center rounded-[14px] border border-black/8 bg-white px-5 text-sm font-black uppercase tracking-[0.14em] text-zinc-950 transition hover:bg-zinc-950 hover:text-white" href="/contact">
+      <a class="inline-flex min-h-12 items-center justify-center rounded-[14px] border border-black/8 bg-white px-5 text-sm font-black text-zinc-950 transition hover:bg-zinc-950 hover:text-white" href="/contact">
         Request Quote
       </a>
     </div>
@@ -84,7 +74,7 @@ const posterImage = resolveWorkImage(project, { width: 1800, height: 1200 });
           allow="fullscreen; xr-spatial-tracking; vr"
           allowfullscreen
         ></iframe>
-        <div class="pointer-events-none absolute left-4 top-4 rounded-full border border-white/12 bg-zinc-950/84 px-3 py-2 text-[10px] font-black uppercase tracking-[0.16em] text-white backdrop-blur-md">
+        <div class="pointer-events-none absolute left-4 top-4 rounded-full border border-white/12 bg-zinc-950/84 px-3 py-2 text-[10px] font-black text-white backdrop-blur-md">
           Live Matterport Preview
         </div>
       </div>

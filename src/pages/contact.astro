@@ -4,12 +4,13 @@ import {
   ArrowRight,
   Building2,
   CalendarRange,
-  Check,
-  FileImage,
+  Crosshair,
+  FolderOpen,
   Mail,
   MapPin,
   MessageCircle,
-  Workflow,
+  Paperclip,
+  Users,
 } from "lucide";
 
 const renderLucideIcon = (iconNode) => {
@@ -49,53 +50,75 @@ const contactCards = [
   },
 ];
 
-const approachSteps = [
+const projectSteps = [
   {
     number: "01",
-    title: "Start with the space",
-    description:
-      "Say whether this is a venue, ballroom, hotel, property, museum, retail environment, showroom, office, or another physical space.",
+    title: "Tell us the space",
+    description: "Share the type, purpose, and location of the space.",
     icon: Building2,
   },
   {
     number: "02",
-    title: "Explain the decision",
-    description:
-      "Describe what the digital experience needs to help someone do: enquire, shortlist, approve, plan, review, or book.",
-    icon: Workflow,
+    title: "Explain the audience",
+    description: "Tell us who it’s for and what experience they need.",
+    icon: Users,
   },
   {
     number: "03",
-    title: "Share the timing",
-    description:
-      "Include any launch date, event window, or business deadline so the reply can be framed around the real urgency.",
-    icon: CalendarRange,
+    title: "Describe the decision",
+    description: "Let us know what you need help deciding or creating.",
+    icon: Crosshair,
   },
   {
     number: "04",
-    title: "Add references if you have them",
-    description:
-      "Floor plans, website links, stills, or example projects help narrow the right capture format quickly.",
-    icon: FileImage,
+    title: "Share the timing",
+    description: "Share key dates and deadlines so we can plan with you.",
+    icon: CalendarRange,
+  },
+  {
+    number: "05",
+    title: "Add references",
+    description: "Send floor plans, links, or examples that inspire the direction.",
+    icon: FolderOpen,
   },
 ];
 
-const includeItems = [
-  "Project type",
-  "Location",
-  "What output you think you need, if known",
-  "What the client or stakeholder needs to understand",
-  "Timeline or preferred capture window",
+const briefRows = [
+  {
+    label: "Space",
+    value: "Hotel ballroom in Kuala Lumpur",
+    icon: Building2,
+  },
+  {
+    label: "Audience",
+    value: "Sales team and event planners",
+    icon: Users,
+  },
+  {
+    label: "Decision",
+    value: "Help clients shortlist and enquire",
+    icon: Crosshair,
+  },
+  {
+    label: "Timing",
+    value: "Needed before September launch",
+    icon: CalendarRange,
+  },
+  {
+    label: "References",
+    value: "Floor plan + sample website",
+    icon: Paperclip,
+  },
 ];
 
-const sampleImages = [
+const exampleImages = [
   {
     src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=500&q=80",
-    alt: "Premium interior space",
+    alt: "Modern interior space",
   },
   {
     src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=500&q=80",
-    alt: "Commercial interior",
+    alt: "Commercial office interior",
   },
   {
     src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80",
@@ -103,7 +126,7 @@ const sampleImages = [
   },
   {
     src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80",
-    alt: "Modern property interior",
+    alt: "Premium residential space",
   },
 ];
 
@@ -182,10 +205,11 @@ const footerColumns = [
           >
             About Novo
           </a>
-          <a
-            href="mailto:hello@novoreperio.com"
-            class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(37,99,235,0.28)] transition hover:bg-blue-500"
-          >
+            <a
+              href="mailto:hello@novoreperio.com"
+              class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(37,99,235,0.28)] transition hover:bg-blue-500"
+              style="color:#fff"
+            >
             <span class="h-4 w-4" set:html={renderLucideIcon(Mail)} />
             Email Novo
           </a>
@@ -220,10 +244,11 @@ const footerColumns = [
           </p>
 
           <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-            <a
-              href="mailto:hello@novoreperio.com"
-              class="inline-flex items-center justify-center gap-3 rounded-lg bg-blue-600 px-7 py-4 text-sm font-bold text-white shadow-[0_16px_40px_rgba(37,99,235,0.32)] transition hover:-translate-y-0.5 hover:bg-blue-500"
-            >
+              <a
+                href="mailto:hello@novoreperio.com"
+                class="inline-flex items-center justify-center gap-3 rounded-lg bg-blue-600 px-7 py-4 text-sm font-bold text-white shadow-[0_16px_40px_rgba(37,99,235,0.32)] transition hover:-translate-y-0.5 hover:bg-blue-500"
+                style="color:#fff"
+              >
               <span class="h-5 w-5" set:html={renderLucideIcon(Mail)} />
               Send Project Details
             </a>
@@ -249,7 +274,7 @@ const footerColumns = [
               </div>
 
               <div>
-                <p class="text-[10px] font-black uppercase tracking-[0.2em] text-white/45">
+                <p class="text-[10px] font-black text-white/45">
                   {card.label}
                 </p>
                 <h2 class="mt-2 text-xl font-semibold leading-tight tracking-[-0.03em] text-white md:text-2xl">
@@ -267,104 +292,110 @@ const footerColumns = [
       </div>
     </section>
 
-    <section class="px-6 py-16 md:px-10 lg:px-16">
-      <div class="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[1.05fr_0.95fr]">
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] md:p-8">
-          <p class="text-xs font-black uppercase tracking-[0.22em] text-blue-600">
-            How to approach us
+    <section class="bg-[#f5f7fb] px-6 py-16 text-[#07101d] md:px-10 lg:px-16">
+      <div class="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[1fr_1fr]">
+        <article class="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-[0_28px_90px_rgba(15,23,42,0.08)] md:p-10">
+          <p class="text-xs font-black uppercase tracking-[0.24em] text-blue-600">
+            How to start a project
           </p>
-          <h2 class="mt-4 text-3xl font-semibold tracking-[-0.06em] md:text-4xl">
-            Start with the project context.
+
+          <h2 class="mt-6 max-w-lg text-4xl font-semibold leading-[0.98] tracking-[-0.06em] md:text-5xl">
+            Start your project in five simple steps.
           </h2>
-          <p class="mt-3 max-w-2xl text-sm leading-7 text-slate-600">
-            Novo works at the intersection of space, presentation, and commercial
-            clarity. A short, context-rich brief is more useful than asking only
-            for a price.
-          </p>
 
-          <div class="relative mt-8 space-y-4">
-            <div class="absolute bottom-8 left-[22px] top-8 hidden w-px bg-blue-200 sm:block"></div>
+          <div class="relative mt-12 space-y-9">
+            <div class="absolute bottom-8 left-[30px] top-8 hidden w-px bg-blue-200 sm:block"></div>
 
-            {approachSteps.map((step) => (
-              <div class="relative grid gap-4 sm:grid-cols-[48px_1fr]">
-                <div class="relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-blue-500 bg-white text-sm font-black text-blue-700">
+            {projectSteps.map((step) => (
+              <div class="relative grid gap-5 sm:grid-cols-[64px_72px_1fr] sm:items-center">
+                <div class="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border-2 border-blue-500 bg-white text-sm font-black text-blue-700 shadow-sm">
                   {step.number}
                 </div>
 
-                <div class="grid gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_10px_34px_rgba(15,23,42,0.06)] sm:grid-cols-[44px_1fr]">
-                  <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
-                    <span class="h-5 w-5" set:html={renderLucideIcon(step.icon)} />
-                  </div>
+                <div class="flex h-16 w-16 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                  <span class="h-8 w-8" set:html={renderLucideIcon(step.icon)} />
+                </div>
 
-                  <div>
-                    <h3 class="text-lg font-bold tracking-[-0.03em] text-blue-700">
-                      {step.title}
-                    </h3>
-                    <p class="mt-1 text-sm leading-6 text-slate-600">
-                      {step.description}
-                    </p>
-                  </div>
+                <div>
+                  <h3 class="text-xl font-bold tracking-[-0.035em] text-[#07101d]">
+                    {step.title}
+                  </h3>
+                  <p class="mt-2 max-w-sm text-base leading-7 text-slate-600">
+                    {step.description}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </article>
 
-        <div class="space-y-5">
-          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] md:p-8">
-            <p class="text-xs font-black uppercase tracking-[0.22em] text-pink-500">
-              What to include
-            </p>
-            <h2 class="mt-4 text-3xl font-semibold tracking-[-0.06em] md:text-4xl">
-              What to include.
-            </h2>
-            <p class="mt-3 max-w-2xl text-sm leading-7 text-slate-600">
-              These points help us give a more specific reply in the first email
-              or WhatsApp message.
+        <div class="grid gap-5">
+          <article class="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-[0_28px_90px_rgba(15,23,42,0.08)] md:p-10">
+            <p class="text-xs font-black uppercase tracking-[0.24em] text-pink-500">
+              Example first brief
             </p>
 
-            <ul class="mt-6 grid gap-3 sm:grid-cols-2">
-              {includeItems.map((item) => (
-                <li class="flex items-start gap-3 text-sm leading-6 text-slate-700">
-                  <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white">
-                    <span class="h-3 w-3" set:html={renderLucideIcon(Check)} />
-                  </span>
-                  <span>{item}</span>
-                </li>
+            <h2 class="mt-4 text-4xl font-semibold tracking-[-0.06em] md:text-5xl">
+              Example first brief.
+            </h2>
+
+            <p class="mt-4 max-w-xl text-base leading-7 text-slate-600">
+              A short, clear brief helps us respond faster and with more precision.
+            </p>
+
+            <div class="mt-7 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+              {briefRows.map((row) => (
+                <div class="grid gap-4 border-b border-slate-200 px-4 py-4 last:border-b-0 sm:grid-cols-[52px_120px_1fr] sm:items-center">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-pink-50 text-pink-500">
+                    <span class="h-5 w-5" set:html={renderLucideIcon(row.icon)} />
+                  </div>
+
+                  <p class="text-base font-bold tracking-[-0.025em] text-[#07101d]">
+                    {row.label}
+                  </p>
+
+                  <p class="text-base leading-7 text-slate-600">
+                    {row.value}
+                  </p>
+                </div>
               ))}
-            </ul>
+            </div>
           </article>
 
-          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] md:p-8">
-            <p class="text-xs font-black uppercase tracking-[0.22em] text-pink-500">
+          <article class="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-[0_28px_90px_rgba(15,23,42,0.08)] md:p-10">
+            <p class="text-xs font-black uppercase tracking-[0.24em] text-pink-500">
               Need examples first?
             </p>
-            <h2 class="mt-4 text-3xl font-semibold leading-none tracking-[-0.06em] md:text-4xl">
-              See how we&apos;ve helped other spaces.
+
+            <h2 class="mt-4 max-w-lg text-3xl font-semibold leading-[1] tracking-[-0.06em] md:text-4xl">
+              See how we&apos;ve helped create immersive spaces.
             </h2>
-            <p class="mt-3 max-w-xl text-sm leading-7 text-slate-600">
-              Explore spatial projects and case studies to understand the
-              approach, outputs, and results we deliver.
+
+            <p class="mt-4 max-w-xl text-base leading-7 text-slate-600">
+              Explore spatial projects and case studies to understand our approach,
+              output, and impact.
             </p>
 
             <div class="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="/works"
-                class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-blue-700"
-              >
+                <a
+                  href="/works"
+                  class="inline-flex items-center justify-center rounded-xl bg-blue-600 px-7 py-4 text-sm font-bold text-white shadow-[0_14px_34px_rgba(37,99,235,0.24)] transition hover:-translate-y-0.5 hover:bg-blue-700"
+                  style="color:#fff"
+                >
                 See Our Work
               </a>
+
               <a
                 href="/about"
-                class="inline-flex items-center justify-center rounded-lg border border-blue-600 px-6 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-50"
+                class="inline-flex items-center justify-center rounded-xl border border-blue-600 bg-white px-7 py-4 text-sm font-bold text-blue-700 transition hover:bg-blue-50"
               >
                 Read About Novo
               </a>
             </div>
 
-            <div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {sampleImages.map((image) => (
-                <div class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200">
+            <div class="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {exampleImages.map((image) => (
+                <div class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200 shadow-sm">
                   <img
                     src={image.src}
                     alt={image.alt}
