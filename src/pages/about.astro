@@ -1,5 +1,19 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
+import { Mail, MapPin, MessageCircle } from "lucide";
+
+const renderLucideIcon = (iconNode) => {
+  const body = iconNode
+    .map(([tag, attrs]) => {
+      const attrString = Object.entries(attrs)
+        .map(([key, value]) => `${key}="${String(value)}"`)
+        .join(" ");
+      return `<${tag} ${attrString}></${tag}>`;
+    })
+    .join("");
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${body}</svg>`;
+};
 
 const storyPillars = [
   {
@@ -51,7 +65,7 @@ const featuredSpaces = [
 ];
 
 const processShowcase = {
-  label: "Process in context",
+  label: "How it comes together",
   title: "Venue understanding before a site visit",
   body: "Immersive capture becomes more useful when it shows how arrival, atmosphere, and movement will feel to the person making the decision.",
   image: "https://novoreperio.com/wp-content/uploads/2023/10/01.18.2023_13.45.49.webp",
@@ -161,7 +175,7 @@ const sectors = [
   },
   {
     title: "Facilities",
-    body: "Operational spaces and remote internal review moments.",
+    body: "Operational spaces and remote review needs where clarity matters.",
     image: "https://novoreperio.com/wp-content/uploads/2020/11/1A4A8643-scaled.jpg",
     alt: "Aerial view used for facilities context",
   },
@@ -198,21 +212,21 @@ const contactChannels = [
     value: "hello@novoreperio.com",
     href: "mailto:hello@novoreperio.com",
     description: "Best for project details, attachments, proposal requests, and formal inquiries.",
-    icon: "@",
+    icon: Mail,
   },
   {
     label: "WhatsApp",
     value: "+60 17-202 9996",
     href: "https://api.whatsapp.com/send/?app_absent=0&phone=60172029996&text=Hello%2C+I+have+a+question+about+your+service%2C+can+you+please+help+me%3F+&type=phone_number",
     description: "Best for quick questions, space references, and early coordination.",
-    icon: "WA",
+    icon: MessageCircle,
   },
   {
-    label: "Studio base",
+    label: "Studio Base",
     value: "Solaris Mont Kiara, 50480 Kuala Lumpur, Malaysia",
-    href: "/contact",
+    href: "https://maps.google.com/?q=Solaris+Mont+Kiara+50480+Kuala+Lumpur+Malaysia",
     description: "Based in Kuala Lumpur, supporting spatial presentation work across hospitality, venues, property, and commercial spaces.",
-    icon: "KL",
+    icon: MapPin,
   },
 ];
 
@@ -1630,6 +1644,17 @@ const contactBackdropImage = "https://novoreperio.com/wp-content/uploads/2023/10
       letter-spacing: -.04em;
     }
 
+    .about-contact-icon-mark {
+      width: 28px;
+      height: 28px;
+    }
+
+    .about-contact-icon-mark :global(svg) {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
     .about-contact-card strong {
       display: block;
       color: #101114;
@@ -2317,7 +2342,7 @@ const contactBackdropImage = "https://novoreperio.com/wp-content/uploads/2023/10
                   </div>
                   <div class="about-proof-item">
                     <strong>Commercial handoff second</strong>
-                    <p>The capture is then shaped into a format that works for enquiries, review, sales, and internal decision-making.</p>
+                    <p>The capture is then shaped into a format that works for enquiries, review, sales, and stakeholder decision-making.</p>
                   </div>
                 </div>
               </div>
@@ -2368,7 +2393,7 @@ const contactBackdropImage = "https://novoreperio.com/wp-content/uploads/2023/10
               </div>
               <p>
                 Novo's work is strongest in spaces where layout, arrival, atmosphere, and movement
-                materially change how a buyer, stakeholder, or internal team understands the place.
+                materially change how a buyer, stakeholder, or project team understands the place.
               </p>
             </div>
 
@@ -2437,7 +2462,9 @@ const contactBackdropImage = "https://novoreperio.com/wp-content/uploads/2023/10
               {contactChannels.map((channel) => (
                 <article class="about-contact-card">
                   <div class="about-contact-card-inner">
-                    <div class="about-contact-icon">{channel.icon}</div>
+                    <div class="about-contact-icon">
+                      <span class="about-contact-icon-mark" set:html={renderLucideIcon(channel.icon)} />
+                    </div>
                     <div>
                       <strong>{channel.label}</strong>
                       <a href={channel.href}>{channel.value}</a>
@@ -2511,7 +2538,7 @@ const contactBackdropImage = "https://novoreperio.com/wp-content/uploads/2023/10
         <a href="#">Terms</a>
         <a href="/contact">Contact</a>
       </div>
-      <span class="text-sm text-white/60">Novo Reperio company profile.</span>
+      <span class="text-sm text-white/60">Spatial storytelling for hospitality, venues, property, and commercial spaces.</span>
     </div>
   </footer>
 </SiteLayout>
