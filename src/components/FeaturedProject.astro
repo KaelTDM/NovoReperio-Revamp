@@ -1,0 +1,104 @@
+---
+import { Image } from "astro:assets";
+import { resolveWorkImage } from "../lib/workImage";
+
+interface Project {
+  title: string;
+  serviceType: string;
+  industry: string;
+  location?: string;
+  image?: string;
+  imageAlt?: string;
+  description: string;
+  impact?: string;
+  highlights?: string[];
+  viewUrl: string;
+  previewType?: string;
+  previewSrc?: string;
+  previewTitle?: string;
+}
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const posterImage = resolveWorkImage(project, { width: 1800, height: 1200 });
+---
+
+<section class="grid gap-4 md:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] md:items-stretch">
+  <div class="flex flex-col gap-5 rounded-[18px] border border-black/8 bg-[linear-gradient(180deg,rgba(255,255,255,.99),rgba(248,250,253,.98))] p-5 shadow-[0_12px_30px_rgba(16,17,20,.08)] md:p-8">
+    <div class="flex flex-wrap items-center gap-2 text-[10px] font-black uppercase tracking-[0.16em]">
+      <span class="rounded-full bg-[#e4126a] px-3 py-1 text-white">Featured Project</span>
+      <span class="rounded-full border border-sky-500/16 bg-sky-50 px-3 py-1 text-sky-700">{project.serviceType}</span>
+    </div>
+
+    <div class="max-w-xl">
+      <h2 class="text-[clamp(2.4rem,4.8vw,4.9rem)] font-semibold leading-[0.92] tracking-[-0.08em] text-zinc-950">
+        {project.title}
+      </h2>
+      <p class="mt-4 max-w-2xl text-base leading-8 text-zinc-700">
+        {project.description}
+      </p>
+      {project.impact && (
+        <p class="mt-4 max-w-2xl text-sm font-semibold leading-7 text-zinc-900">
+          {project.impact}
+        </p>
+      )}
+    </div>
+
+    {project.highlights && project.highlights.length > 0 && (
+      <ul class="grid gap-3 border-y border-black/8 py-4 text-sm leading-7 text-zinc-800">
+        {project.highlights.map((item) => (
+          <li class="flex items-start gap-3">
+            <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#f37121] shadow-[0_0_0_5px_rgba(243,113,33,.12)]"></span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    )}
+
+    <div class="flex flex-wrap gap-2 text-[10px] font-black uppercase tracking-[0.16em] text-zinc-700">
+      {project.location && <span class="rounded-full border border-black/8 bg-white px-3 py-1">{project.location}</span>}
+      <span class="rounded-full border border-black/8 bg-white px-3 py-1">{project.industry}</span>
+    </div>
+
+    <div class="flex flex-wrap gap-3 pt-1">
+      <a class="inline-flex min-h-12 items-center justify-center rounded-[14px] border border-sky-500 bg-sky-500 px-5 text-sm font-black uppercase tracking-[0.14em] text-white shadow-[0_12px_22px_rgba(21,159,230,.24)] transition hover:border-[#0f83bf] hover:bg-[#0f83bf]" href={project.viewUrl} target="_blank" rel="noreferrer">
+        View Project
+      </a>
+      <a class="inline-flex min-h-12 items-center justify-center rounded-[14px] border border-black/8 bg-white px-5 text-sm font-black uppercase tracking-[0.14em] text-zinc-950 transition hover:bg-zinc-950 hover:text-white" href="/contact">
+        Request Quote
+      </a>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-[18px] border border-black/8 bg-[radial-gradient(circle_at_84%_16%,rgba(21,159,230,.18),transparent_26%),linear-gradient(180deg,rgba(10,12,18,.98),rgba(14,18,26,.98))] shadow-[0_26px_54px_rgba(7,12,20,.18)]">
+    {project.previewType === "matterport" && project.previewSrc ? (
+      <div class="relative min-h-[360px] md:min-h-[620px]">
+        <iframe
+          class="absolute inset-0 h-full w-full"
+          src={project.previewSrc}
+          title={project.previewTitle}
+          loading="lazy"
+          allow="fullscreen; xr-spatial-tracking; vr"
+          allowfullscreen
+        ></iframe>
+        <div class="pointer-events-none absolute left-4 top-4 rounded-full border border-white/12 bg-zinc-950/84 px-3 py-2 text-[10px] font-black uppercase tracking-[0.16em] text-white backdrop-blur-md">
+          Live Matterport Preview
+        </div>
+      </div>
+    ) : (
+      <div class="relative aspect-[4/3] md:min-h-[620px]">
+        <Image
+          src={posterImage.src}
+          alt={posterImage.alt}
+          width={1800}
+          height={1200}
+          sizes="(max-width: 1180px) 100vw, 52vw"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    )}
+  </div>
+</section>
